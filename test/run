@@ -1,0 +1,6 @@
+#!/bin/sh
+
+files=test/test.*.js
+for file in $files; do
+  node $file
+done

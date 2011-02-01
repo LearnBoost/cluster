@@ -13,11 +13,6 @@
   complete: false
   description: 
   length: 25
-  name: USR1 to signal graceful reload
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: pidfile support
 - !ruby/object:Pomo::Task 
   complete: false
@@ -74,3 +69,8 @@
   description: 
   length: 25
   name: SSL
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: SIGUSR2 for graceful reload (node uses USR1 for debugger)
