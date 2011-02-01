@@ -13,4 +13,5 @@ var server = http.createServer(function(req, res){
 });
 
 engine(server)
+  .workers(4)
   .listen(3000);
