@@ -1,0 +1,76 @@
+--- 
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: detect cpu count
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: re-spawn workers on failure
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: USR1 to signal graceful reload
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: pidfile support
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: logfile support
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: repl + commands
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: repl stats
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: cli for easy interactions
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: monitoring (hoptoad etc)
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: demote usr/grp
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: set working dir
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: buffered log option
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: kill workers after master dies (ping interval)
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: master/plugin log
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: SSL
