@@ -84,3 +84,8 @@
   description: 
   length: 25
   name: auto re-spawn workers when a file changes (plugin)
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: log rotation capabilities
