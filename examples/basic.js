@@ -13,5 +13,5 @@ var server = http.createServer(function(req, res){
 });
 
 engine(server)
-  .workers(4)
+  .use(engine.logger())
   .listen(3000);
