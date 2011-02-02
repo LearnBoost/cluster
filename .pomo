@@ -79,3 +79,8 @@
   description: 
   length: 25
   name: re-spawn master
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: auto re-spawn workers when a file changes (plugin)
