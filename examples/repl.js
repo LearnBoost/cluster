@@ -15,5 +15,5 @@ var server = http.createServer(function(req, res){
 
 engine(server)
   .use(engine.stats())
-  .use(engine.repl('/var/run/engine'))
+  .use(engine.repl('repl'))
   .listen();
