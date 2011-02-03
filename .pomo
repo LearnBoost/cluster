@@ -1,10 +1,5 @@
 --- 
 - !ruby/object:Pomo::Task 
-  complete: true
-  description: 
-  length: 25
-  name: detect cpu count
-- !ruby/object:Pomo::Task 
   complete: false
   description: 
   length: 25
@@ -15,20 +10,10 @@
   length: 25
   name: pidfile support
 - !ruby/object:Pomo::Task 
-  complete: true
-  description: 
-  length: 25
-  name: logfile support
-- !ruby/object:Pomo::Task 
   complete: false
   description: 
   length: 25
   name: repl + commands
-- !ruby/object:Pomo::Task 
-  complete: true
-  description: 
-  length: 25
-  name: repl stats
 - !ruby/object:Pomo::Task 
   complete: false
   description: 
@@ -60,11 +45,6 @@
   length: 25
   name: kill workers after master dies (ping interval)
 - !ruby/object:Pomo::Task 
-  complete: true
-  description: 
-  length: 25
-  name: master/plugin log
-- !ruby/object:Pomo::Task 
   complete: false
   description: 
   length: 25
@@ -90,11 +70,6 @@
   length: 25
   name: log rotation capabilities
 - !ruby/object:Pomo::Task 
-  complete: true
-  description: 
-  length: 25
-  name: default logging to stdout/stderr
-- !ruby/object:Pomo::Task 
   complete: false
   description: 
   length: 25
@@ -104,11 +79,6 @@
   description: 
   length: 25
   name: suicide when master dies
-- !ruby/object:Pomo::Task 
-  complete: true
-  description: 
-  length: 25
-  name: fix cpu spikes on SIGTERM
 - !ruby/object:Pomo::Task 
   complete: false
   description: 
