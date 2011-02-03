@@ -13,8 +13,10 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
+// $ telnet /path/to/examples/repl
+
 engine(server)
   .use(engine.logger('logs'))
   .use(engine.stats())
-  .use(engine.repl('repl'))
+  .use(engine.repl(__dirname + '/repl'))
   .listen();

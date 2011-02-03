@@ -14,4 +14,5 @@ var server = http.createServer(function(req, res){
 });
 
 engine(server)
+  .chdir('/')
   .listen();
