@@ -94,3 +94,8 @@
   description: 
   length: 25
   name: default logging to stdout/stderr
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: diagrams explaining the architecture
