@@ -13,13 +13,15 @@ var server = http.createServer(function(req, res){
 });
 
 engine = engine(server)
-  .listen(8888);
+  .listen(3000);
 
-http.get({ host: 'localhost', port: 3000 }, function(res){
-  res.on('data', function(chunk){
-    assert.equal('Hello World', chunk.toString());
-  });
-  res.on('end', function(){
-    engine.close();
+engine.on('listening', function(){
+  http.get({ host: 'localhost', port: 3000 }, function(res){
+    res.on('data', function(chunk){
+      assert.equal('Hello World', chunk.toString());
+    });
+    res.on('end', function(){
+      engine.close();
+    });
   });
 });
