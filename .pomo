@@ -89,3 +89,8 @@
   description: 
   length: 25
   name: log rotation capabilities
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: default logging to stdout/stderr
