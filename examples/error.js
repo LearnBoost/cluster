@@ -15,6 +15,7 @@ var server = http.createServer(function(req, res){
 });
 
 engine(server)
+  .use(engine.debug())
   .use(engine.logger())
   .use(engine.stats())
   .use(engine.repl(__dirname + '/repl'))
