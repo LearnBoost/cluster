@@ -109,3 +109,8 @@
   description: 
   length: 25
   name: fix cpu spikes on SIGTERM
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: better IPC, association between sockets and workers
