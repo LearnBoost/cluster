@@ -1,6 +1,6 @@
 --- 
 - !ruby/object:Pomo::Task 
-  complete: false
+  complete: true
   description: 
   length: 25
   name: detect cpu count
@@ -15,7 +15,7 @@
   length: 25
   name: pidfile support
 - !ruby/object:Pomo::Task 
-  complete: false
+  complete: true
   description: 
   length: 25
   name: logfile support
@@ -25,7 +25,7 @@
   length: 25
   name: repl + commands
 - !ruby/object:Pomo::Task 
-  complete: false
+  complete: true
   description: 
   length: 25
   name: repl stats
@@ -60,7 +60,7 @@
   length: 25
   name: kill workers after master dies (ping interval)
 - !ruby/object:Pomo::Task 
-  complete: false
+  complete: true
   description: 
   length: 25
   name: master/plugin log
