@@ -13,7 +13,7 @@ var server = http.createServer(function(req, res){
 });
 
 engine = engine(server)
-  .chdir('/')
+  .set('working directory', '/')
   .listen(3000);
 
 if (engine.isWorker) {
