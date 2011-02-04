@@ -83,11 +83,6 @@
   complete: false
   description: 
   length: 25
-  name: zombies
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: |
     move commands off of Master/Worker .prototype'
 
@@ -96,3 +91,8 @@
   description: 
   length: 25
   name: better debug output
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: fix orphaned workers
