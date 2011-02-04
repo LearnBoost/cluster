@@ -8,10 +8,6 @@ var engine = require('../')
   , http = require('http')
   , fs = require('fs');
 
-var master = __dirname + '/logs/master.log'
-  , workerAccess = __dirname + '/logs/worker.0.access.log'
-  , workerError = __dirname + '/logs/worker.0.error.log';
-
 var server = http.createServer(function(req, res){
   console.log('%s %s', req.method, req.url);
   res.writeHead(200);
@@ -28,6 +24,9 @@ engine.on('listening', function(){
     res.on('end', function(){
       var files = fs.readdirSync(__dirname + '/logs');
       files.should.have.length(4);
+      files.should.contain('master.log');
+      files.should.contain('worker.0.access.log');
+      files.should.contain('worker.0.error.log');
       engine.close();
     });
   });
