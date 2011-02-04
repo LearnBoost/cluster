@@ -79,3 +79,8 @@
   description: 
   length: 25
   name: better IPC, association between sockets and workers
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: zombies
