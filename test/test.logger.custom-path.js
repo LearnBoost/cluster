@@ -16,14 +16,14 @@ var server = http.createServer(function(req, res){
 
 engine = engine(server)
   .workers(1)
-  .use(engine.logger())
+  .use(engine.logger(__dirname + '/logs/nested'))
   .listen(3000);
 
 engine.on('listening', function(){
   http.get({ host: 'localhost', port: 3000 }, function(res){
     res.on('end', function(){
-      var files = fs.readdirSync(__dirname + '/logs');
-      files.should.have.length(5);
+      var files = fs.readdirSync(__dirname + '/logs/nested');
+      files.should.have.length(4);
       files.should.contain('master.log');
       files.should.contain('worker.0.access.log');
       files.should.contain('worker.0.error.log');

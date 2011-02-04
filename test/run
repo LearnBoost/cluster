@@ -1,6 +1,7 @@
 #!/bin/sh
 
 rm -f logs/*.log
+rm -f logs/nested/*.log
 
 files=test/test.*.js
 for file in $files; do
