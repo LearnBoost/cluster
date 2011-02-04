@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rm logs/*.log
+
 files=test/test.*.js
 for file in $files; do
   printf "\033[90m... $file\033[0m "
