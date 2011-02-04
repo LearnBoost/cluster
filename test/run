@@ -3,5 +3,5 @@
 files=test/test.*.js
 for file in $files; do
   printf "\033[90m... $file\033[0m "
-  node $file && echo "\033[32m√\033[0m"
+  node $@ $file && echo "\033[32m√\033[0m"
 done

@@ -2,4 +2,7 @@
 test:
 	@./test/run
 
-.PHONY: test
+test-debug:
+	@./test/run debug
+
+.PHONY: test test-debug
