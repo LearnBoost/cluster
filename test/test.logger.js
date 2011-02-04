@@ -4,7 +4,7 @@
  */
 
 var engine = require('../')
-  , assert = require('assert')
+  , should = require('../support/should')
   , http = require('http')
   , fs = require('fs');
 
@@ -25,12 +25,9 @@ engine = engine(server)
 
 engine.on('listening', function(){
   http.get({ host: 'localhost', port: 3000 }, function(res){
-    res.on('data', function(chunk){
-      assert.equal('Hello World', chunk.toString());
-    });
     res.on('end', function(){
       var files = fs.readdirSync(__dirname + '/logs');
-      assert.equal(4, files.length);
+      files.should.have.length(4);
       engine.close();
     });
   });

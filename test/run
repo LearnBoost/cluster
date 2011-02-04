@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm logs/*.log
+rm -f logs/*.log
 
 files=test/test.*.js
 for file in $files; do

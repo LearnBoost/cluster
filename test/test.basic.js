@@ -4,7 +4,7 @@
  */
 
 var engine = require('../')
-  , assert = require('assert')
+  , should = require('../support/should')
   , http = require('http');
 
 var server = http.createServer(function(req, res){
@@ -18,7 +18,7 @@ engine = engine(server)
 engine.on('listening', function(){
   http.get({ host: 'localhost', port: 3000 }, function(res){
     res.on('data', function(chunk){
-      assert.equal('Hello World', chunk.toString());
+      chunk.toString().should.equal('Hello World');
     });
     res.on('end', function(){
       engine.close();
