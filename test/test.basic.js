@@ -16,6 +16,7 @@ engine = engine(server)
   .listen(3000);
 
 engine.on('listening', function(){
+  console.log('listening');
   http.get({ host: 'localhost', port: 3000 }, function(res){
     res.on('data', function(chunk){
       assert.equal('Hello World', chunk.toString());
