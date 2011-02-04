@@ -13,7 +13,6 @@ var server = http.createServer(function(req, res){
 });
 
 engine = engine(server)
-  .use(engine.debug())
   .listen(3000);
 
 engine.on('listening', function(){
