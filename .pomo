@@ -95,9 +95,4 @@
   complete: false
   description: 
   length: 25
-  name: use .set() instead of .workers etc ?
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: fix workers when master dies
