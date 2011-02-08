@@ -19,4 +19,5 @@ engine(server)
   .use(engine.logger('logs'))
   .use(engine.stats())
   .use(engine.repl(__dirname + '/repl'))
+  .use(engine.debug())
   .listen();
