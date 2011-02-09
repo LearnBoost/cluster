@@ -13,6 +13,12 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
+// custom repl function
+
+engine.repl.define('echo', function(master, sock, msg){
+  sock.write(msg + '\n');
+}, 'echo the given message');
+
 // $ telnet /path/to/examples/repl
 
 engine(server)
