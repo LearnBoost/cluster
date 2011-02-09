@@ -16,4 +16,4 @@ var server = http.createServer(function(req, res){
 engine(server)
   .use(engine.logger('logs', 'debug'))
   .use(engine.debug())
-  .listen();
+  .listen(3000);
