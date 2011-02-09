@@ -22,6 +22,7 @@ engine.repl.define('echo', function(master, sock, msg){
 // $ telnet localhost 8888
 
 engine(server)
+  .set('workers', 1)
   .use(engine.logger())
   .use(engine.repl(8888))
   .listen(3000);
