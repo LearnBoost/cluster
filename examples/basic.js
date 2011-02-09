@@ -15,4 +15,4 @@ var server = http.createServer(function(req, res){
 
 engine(server)
   .set('working directory', '/')
-  .listen();
+  .listen(3000);
