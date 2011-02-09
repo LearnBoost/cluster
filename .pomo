@@ -81,3 +81,8 @@
   description: 
   length: 25
   name: fix workers when master dies
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: log viewer plugin
