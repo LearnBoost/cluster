@@ -3,6 +3,8 @@
 rm -f logs/*.log
 rm -f logs/nested/*.log
 
+killall -KILL node
+
 files=test/test.*.js
 for file in $files; do
   printf "\033[90m... ${file#test/}\033[0m "
