@@ -3,11 +3,6 @@
   complete: false
   description: 
   length: 25
-  name: pidfile support
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: cli for easy interactions
 - !ruby/object:Pomo::Task 
   complete: false
