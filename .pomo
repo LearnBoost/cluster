@@ -80,14 +80,4 @@
   complete: false
   description: 
   length: 25
-  name: fix orphaned workers
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: fix workers when master dies
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
-  name: ignore SIGHUP? or only when isatty? think about it
