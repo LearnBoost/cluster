@@ -19,11 +19,11 @@ engine.repl.define('echo', function(master, sock, msg){
   sock.write(msg + '\n');
 }, 'echo the given message');
 
-// $ telnet /path/to/examples/repl
+// $ telnet localhots 8888
 
 engine(server)
   .use(engine.logger('logs'))
   .use(engine.stats())
-  .use(engine.repl(__dirname + '/repl'))
+  .use(engine.repl(8888))
   .use(engine.debug())
   .listen(3000);
