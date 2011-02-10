@@ -3,11 +3,6 @@
   complete: false
   description: 
   length: 25
-  name: cli for easy interactions
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: monitoring (hoptoad etc)
 - !ruby/object:Pomo::Task 
   complete: false
@@ -29,11 +24,6 @@
   description: 
   length: 25
   name: SSL
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
-  name: SIGUSR2 for graceful reload (node uses USR1 for debugger)
 - !ruby/object:Pomo::Task 
   complete: false
   description: 
