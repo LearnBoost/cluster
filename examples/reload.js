@@ -16,6 +16,7 @@ var server = http.createServer(function(req, res){
 });
 
 engine(server)
+  .set('workers', 1)
   .use(engine.reload(__dirname))
   .use(engine.debug())
   .listen(3000);
