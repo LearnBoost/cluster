@@ -6,6 +6,8 @@
 var engine = require('../')
   , http = require('http');
 
+// try loading, and changing "Hello", to "Hello World"
+
 var body = 'Hello'
   , len = body.length;
 var server = http.createServer(function(req, res){
