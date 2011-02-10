@@ -14,6 +14,6 @@ var server = http.createServer(function(req, res){
 });
 
 engine(server)
-  .use(engine.reload('reload.js'))
+  .use(engine.reload(__dirname))
   .use(engine.debug())
   .listen(3000);
