@@ -8,7 +8,7 @@ var engine = require('../')
 
 // try loading, and changing "Hello", to "Hello World"
 
-var body = 'Hello'
+var body = 'Hello World'
   , len = body.length;
 var server = http.createServer(function(req, res){
   res.writeHead(200, { 'Content-Length': len });
