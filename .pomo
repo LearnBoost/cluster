@@ -18,11 +18,6 @@
   complete: false
   description: 
   length: 25
-  name: kill workers after master dies (ping interval)
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: SSL
 - !ruby/object:Pomo::Task 
   complete: false
@@ -48,11 +43,6 @@
   complete: false
   description: 
   length: 25
-  name: suicide when master dies
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: log viewer plugin
 - !ruby/object:Pomo::Task 
   complete: false
@@ -69,8 +59,3 @@
   description: 
   length: 25
   name: fix restart race-condition, fails after a request is issued
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
-  name: default pids to /var/run/engine
