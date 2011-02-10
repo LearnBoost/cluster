@@ -64,3 +64,8 @@
   description: 
   length: 25
   name: mkdirs
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: fix restart race-condition, sometimes spawning fails
