@@ -1,6 +1,22 @@
 
 # Engine
 
+## Features
+
+  - hard shutdown support
+  - graceful shutdown support
+  - resuscitates workers
+  - workers commit suicide when master dies 
+  - spawns one worker per cpu (by default)
+  - extensible via plugins
+  - bundled plugins
+    - debug: verbose debugging information
+    - logger: master / worker logs
+    - pidfiles: writes master / worker pidfiles
+    - reload: reloads workers when files change
+    - repl: perform real-time administration
+    - stats: adds real-time statistics to the `repl` plugin
+
 ## License 
 
 (The MIT License)
