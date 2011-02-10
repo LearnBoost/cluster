@@ -63,16 +63,9 @@
   complete: false
   description: 
   length: 25
-  name: |
-    move commands off of Master/Worker .prototype'
-
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
-  name: fix workers when master dies
-- !ruby/object:Pomo::Task 
-  complete: false
-  description: 
-  length: 25
   name: log viewer plugin
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: more tests
