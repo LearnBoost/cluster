@@ -16,6 +16,28 @@
      engine(server)
        .listen(3000);
 
+### Plugins
+
+ A plugin simple a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
+ 
+    function myPlugin(path){
+      return function(master) {
+        // do stuff
+      }
+    }
+
+ To use them, all we need to do is pass it to the `use()` method:
+ 
+    engine(server)
+      .use(myPlugin('/some/path'))
+      .listen(3000);
+
+ To use a plugin that is bundled with Engine simply grab it from the `engine` object:
+ 
+     engine(server)
+       .use(engine.logger())
+       .listen(3000);
+
 ### Settings
 
  Below are the settings available:
