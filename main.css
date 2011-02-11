@@ -1,7 +1,7 @@
 
 body {
   padding: 100px;
-  font: 14px 'helvetica neue', helvetica, arial, sans-serif;
+  font: 14px/1.4 'helvetica neue', helvetica, arial, sans-serif;
 }
 
 body.subpage {
@@ -37,7 +37,7 @@ h3 {
 }
 
 pre {
-  margin: 25px 0 10px 0;
+  margin: 20px 0 10px 20px;
   background: #fefefe;
   padding: 20px 10px;
   -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
