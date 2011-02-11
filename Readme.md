@@ -1,5 +1,7 @@
 
-# Engine
+# Cluster
+
+ Cluster is an extensible server manager for [node.js](http://nodejs.org).
 
 ## Features
 
@@ -16,6 +18,16 @@
     - reload: reloads workers when files change
     - repl: perform real-time administration
     - stats: adds real-time statistics to the `repl` plugin
+
+## Running Tests
+
+First:
+
+   $ git submodule update --init
+
+Then:
+
+   $ make test
 
 ## License 
 
