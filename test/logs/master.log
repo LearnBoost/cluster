@@ -1,0 +1,24 @@
+[Fri, 11 Feb 2011 16:35:49 GMT] INFO master started
+[Fri, 11 Feb 2011 16:35:49 GMT] INFO spawned worker 0
+[Fri, 11 Feb 2011 16:35:49 GMT] WARNING shutting down master
+[Fri, 11 Feb 2011 16:35:49 GMT] WARNING sent kill(SIGQUIT) to all workers
+[Fri, 11 Feb 2011 16:35:49 GMT] ERROR worker 0 died
+[Fri, 11 Feb 2011 16:35:49 GMT] INFO shutdown complete
+[Fri, 11 Feb 2011 16:43:06 GMT] INFO master started
+[Fri, 11 Feb 2011 16:43:06 GMT] INFO spawned worker 0
+[Fri, 11 Feb 2011 16:43:06 GMT] WARNING shutting down master
+[Fri, 11 Feb 2011 16:43:06 GMT] WARNING sent kill(SIGQUIT) to all workers
+[Fri, 11 Feb 2011 16:43:06 GMT] ERROR worker 0 died
+[Fri, 11 Feb 2011 16:43:06 GMT] INFO shutdown complete
+[Fri, 11 Feb 2011 16:43:26 GMT] INFO master started
+[Fri, 11 Feb 2011 16:43:26 GMT] INFO spawned worker 0
+[Fri, 11 Feb 2011 16:43:26 GMT] WARNING shutting down master
+[Fri, 11 Feb 2011 16:43:26 GMT] WARNING sent kill(SIGQUIT) to all workers
+[Fri, 11 Feb 2011 16:43:26 GMT] ERROR worker 0 died
+[Fri, 11 Feb 2011 16:43:26 GMT] INFO shutdown complete
+[Fri, 11 Feb 2011 16:44:15 GMT] INFO master started
+[Fri, 11 Feb 2011 16:44:15 GMT] INFO spawned worker 0
+[Fri, 11 Feb 2011 16:44:15 GMT] WARNING shutting down master
+[Fri, 11 Feb 2011 16:44:15 GMT] WARNING sent kill(SIGQUIT) to all workers
+[Fri, 11 Feb 2011 16:44:15 GMT] ERROR worker 0 died
+[Fri, 11 Feb 2011 16:44:15 GMT] INFO shutdown complete
