@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var engine = require('../')
+var cluster = require('../')
   , http = require('http');
 
 var body = 'Hello World'
@@ -13,6 +13,6 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
-engine(server)
-  .use(engine.pidfiles())
+cluster(server)
+  .use(cluster.pidfiles())
   .listen(3000);

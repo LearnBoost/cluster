@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var engine = require('../')
+var cluster = require('../')
   , http = require('http');
 
 var server = http.createServer(function(req, res){
@@ -14,9 +14,9 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
-engine(server)
-  .use(engine.debug())
-  .use(engine.logger())
-  .use(engine.stats())
-  .use(engine.repl(__dirname + '/repl'))
+cluster(server)
+  .use(cluster.debug())
+  .use(cluster.logger())
+  .use(cluster.stats())
+  .use(cluster.repl(__dirname + '/repl'))
   .listen(3000);

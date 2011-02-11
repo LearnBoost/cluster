@@ -15,12 +15,12 @@ The `pidfiles([path])` plugin saves pid (process-id) files to the given `path` o
 
 save to `./pids`:
 
-   engine(server)
-     .use(engine.pidfiles())
+   cluster(server)
+     .use(cluster.pidfiles())
      .listen(3000);
 
 save to `/var/run/node`:
 
-   engine(server)
-     .use(engine.logger('/var/run/node'))
+   cluster(server)
+     .use(cluster.logger('/var/run/node'))
      .listen(3000);

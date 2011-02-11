@@ -22,6 +22,6 @@ Outputs verbose debugging information to _stderr_.
 
 ## Usage
 
-   engine(server)
-     .use(engine.debug())
+   cluster(server)
+     .use(cluster.debug())
      .listen(3000);

@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var engine = require('../')
+var cluster = require('../')
   , http = require('http');
 
 var server = http.createServer(function(req, res){
@@ -15,15 +15,15 @@ var server = http.createServer(function(req, res){
 
 // custom repl function
 
-engine.repl.define('echo', function(master, sock, msg){
+cluster.repl.define('echo', function(master, sock, msg){
   sock.write(msg + '\n');
 }, 'echo the given message');
 
 // $ telnet localhots 8888
 
-engine(server)
-  .use(engine.logger('logs'))
-  .use(engine.stats())
-  .use(engine.repl(8888))
-  .use(engine.debug())
+cluster(server)
+  .use(cluster.logger('logs'))
+  .use(cluster.stats())
+  .use(cluster.repl(8888))
+  .use(cluster.debug())
   .listen(3000);

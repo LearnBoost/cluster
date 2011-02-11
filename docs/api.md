@@ -1,11 +1,11 @@
 
 ## API
 
- The Engine API at its core is extremely simple, all we need to do is pass
- our http `server` to `engine()`, then call `listen()` as we would on the `http.Server` itself.
+ The Cluster API at its core is extremely simple, all we need to do is pass
+ our http `server` to `cluster()`, then call `listen()` as we would on the `http.Server` itself.
 
 
-     var engine = require('../')
+     var cluster = require('../')
        , http = require('http');
 
      var server = http.createServer(function(req, res){
@@ -13,7 +13,7 @@
        res.end('Hello World');
      });
 
-     engine(server)
+     cluster(server)
        .listen(3000);
 
 ### Plugins
@@ -28,14 +28,14 @@
 
  To use them, all we need to do is pass it to the `use()` method:
  
-    engine(server)
+    cluster(server)
       .use(myPlugin('/some/path'))
       .listen(3000);
 
- To use a plugin that is bundled with Engine simply grab it from the `engine` object:
+ To use a plugin that is bundled with Cluster simply grab it from the `cluster` object:
  
-     engine(server)
-       .use(engine.logger())
+     cluster(server)
+       .use(cluster.logger())
        .listen(3000);
 
 ### Settings
@@ -49,14 +49,14 @@
 
  We can take what we have now, and go on to apply settings using the `set(option, value)` method. For example:
  
-    engine(server)
+    cluster(server)
       .set('working directory', '/')
       .set('workers', 5)
       .listen(3000);
 
 ### Signals
 
- Engine performs the following actions when handling signals:
+ Cluster performs the following actions when handling signals:
  
    - `SIGINT`   hard shutdown
    - `SIGTERM`  hard shutdown

@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var engine = require('../')
+var cluster = require('../')
   , http = require('http');
 
 var body = 'Hello World'
@@ -13,7 +13,7 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
-engine(server)
+cluster(server)
   .set('working directory', '/')
   .set('workers', 1)
   .listen(3000);

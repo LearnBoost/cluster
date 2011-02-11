@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var engine = require('../')
+var cluster = require('../')
   , http = require('http');
 
 // try loading, and changing "Hello", to "Hello World"
@@ -15,8 +15,8 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
-engine(server)
+cluster(server)
   .set('workers', 1)
-  .use(engine.reload(__dirname))
-  .use(engine.debug())
+  .use(cluster.reload(__dirname))
+  .use(cluster.debug())
   .listen(3000);

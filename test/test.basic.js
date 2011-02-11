@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var engine = require('../')
+var cluster = require('../')
   , should = require('../support/should')
   , http = require('http');
 
@@ -12,16 +12,16 @@ var server = http.createServer(function(req, res){
   res.end('Hello World');
 });
 
-engine = engine(server)
+cluster = cluster(server)
   .listen(3000);
 
-engine.on('listening', function(){
+cluster.on('listening', function(){
   http.get({ host: 'localhost', port: 3000 }, function(res){
     res.on('data', function(chunk){
       chunk.toString().should.equal('Hello World');
     });
     res.on('end', function(){
-      engine.close();
+      cluster.close();
     });
   });
 });

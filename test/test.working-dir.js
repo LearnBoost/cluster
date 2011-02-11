@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var engine = require('../')
+var cluster = require('../')
   , should = require('../support/should')
   , http = require('http');
 
@@ -12,15 +12,15 @@ var server = http.createServer(function(req, res){
   res.end('Hello World');
 });
 
-engine = engine(server)
+cluster = cluster(server)
   .set('working directory', '/')
   .listen(3000);
 
-if (engine.isWorker) {
+if (cluster.isWorker) {
   process.cwd().should.equal('/');
 }
 
-engine.on('listening', function(){
+cluster.on('listening', function(){
   process.cwd().should.equal('/');
-  engine.close();
+  cluster.close();
 });
