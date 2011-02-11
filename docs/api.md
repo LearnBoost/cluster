@@ -20,23 +20,23 @@
 
  A plugin simple a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
  
-    function myPlugin(path){
-      return function(master) {
-        // do stuff
+      function myPlugin(path){
+        return function(master) {
+          // do stuff
+        }
       }
-    }
 
  To use them, all we need to do is pass it to the `use()` method:
  
-    cluster(server)
-      .use(myPlugin('/some/path'))
-      .listen(3000);
+      cluster(server)
+        .use(myPlugin('/some/path'))
+        .listen(3000);
 
  To use a plugin that is bundled with Cluster simply grab it from the `cluster` object:
  
-     cluster(server)
-       .use(cluster.logger())
-       .listen(3000);
+       cluster(server)
+         .use(cluster.logger())
+         .listen(3000);
 
 ### Settings
 
@@ -49,10 +49,10 @@
 
  We can take what we have now, and go on to apply settings using the `set(option, value)` method. For example:
  
-    cluster(server)
-      .set('working directory', '/')
-      .set('workers', 5)
-      .listen(3000);
+      cluster(server)
+        .set('working directory', '/')
+        .set('workers', 5)
+        .listen(3000);
 
 ### Signals
 

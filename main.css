@@ -18,6 +18,25 @@ a:hover {
   width: 100%;
 }
 
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+pre {
+  margin: 25px 0 10px 0;
+  background: #fefefe;
+  padding: 20px 10px;
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
+}
+
 #footer {
   margin: 5px 0;
   float: left;

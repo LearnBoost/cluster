@@ -1,4 +1,9 @@
-<div class='mp'>
+<html>
+  <head>
+    <title>Cluster - extensible multi-core server management for nodejs</title>
+    <link rel='stylesheet' href='../main.css' />
+  </head>
+  <body><div class='mp'>
 <h2 id="API">API</h2>
 
 <p> The Cluster API at its core is extremely simple, all we need to do is pass
@@ -20,25 +25,25 @@
 
 <p> A plugin simple a function that accepts the <code>master</code> process. Most plugin functions <em>return</em> another anonymous function, allowing them to accept options, for example:</p>
 
-<pre><code>function myPlugin(path){
-  return function(master) {
-    // do stuff
+<pre><code>  function myPlugin(path){
+    return function(master) {
+      // do stuff
+    }
   }
-}
 </code></pre>
 
 <p> To use them, all we need to do is pass it to the <code>use()</code> method:</p>
 
-<pre><code>cluster(server)
-  .use(myPlugin('/some/path'))
-  .listen(3000);
+<pre><code>  cluster(server)
+    .use(myPlugin('/some/path'))
+    .listen(3000);
 </code></pre>
 
 <p> To use a plugin that is bundled with Cluster simply grab it from the <code>cluster</code> object:</p>
 
-<pre><code> cluster(server)
-   .use(cluster.logger())
-   .listen(3000);
+<pre><code>   cluster(server)
+     .use(cluster.logger())
+     .listen(3000);
 </code></pre>
 
 <h3 id="Settings">Settings</h3>
@@ -55,10 +60,10 @@
 
 <p> We can take what we have now, and go on to apply settings using the <code>set(option, value)</code> method. For example:</p>
 
-<pre><code>cluster(server)
-  .set('working directory', '/')
-  .set('workers', 5)
-  .listen(3000);
+<pre><code>  cluster(server)
+    .set('working directory', '/')
+    .set('workers', 5)
+    .listen(3000);
 </code></pre>
 
 <h3 id="Signals">Signals</h3>
@@ -92,3 +97,5 @@
 
 
 </div>
+  </body>
+</html>
