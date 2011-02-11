@@ -23,11 +23,11 @@
 
 First:
 
-   $ git submodule update --init
+     $ git submodule update --init
 
 Then:
 
-   $ make test
+     $ make test
 
 ## License 
 

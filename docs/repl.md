@@ -9,9 +9,9 @@
 
 Launch the __REPL__ on port _8888_:
  
-    cluster(server)
-      .use(cluster.repl(8888))
-      .listen(3000);
+      cluster(server)
+        .use(cluster.repl(8888))
+        .listen(3000);
 
 Start a telnet session:
 

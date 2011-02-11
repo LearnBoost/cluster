@@ -8,14 +8,14 @@
 
 To utilize simply `use()` both the `stats()` and `repl()` plugins.
 
-    cluster(server)
-      .use(cluster.stats())
-      .use(cluster.repl(8888))
-      .listen(3000);
+      cluster(server)
+        .use(cluster.stats())
+        .use(cluster.repl(8888))
+        .listen(3000);
 
 Telnet to the repl:
 
-    $ telnet localhost 8888
+      $ telnet localhost 8888
 
 ### stats()
 

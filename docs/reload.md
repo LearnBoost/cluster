@@ -10,18 +10,18 @@
 
  Reload when files in `./lib` change:
 
-      cluster(server)
-        .use(cluster.reloader('lib'))
-        .listen(3000);
+        cluster(server)
+          .use(cluster.reloader('lib'))
+          .listen(3000);
 
  Reload when files in `./lib`, `./tests`, or the `./index.js` file change:
 
-      cluster(server)
-        .use(cluster.reloader(['lib', 'tests', 'index.js']))
-        .listen(3000);
+        cluster(server)
+          .use(cluster.reloader(['lib', 'tests', 'index.js']))
+          .listen(3000);
 
  Graceful shutdown:
  
-     cluster(server)
-      .use(cluster.reloader('lib', 'SIGQUIT'))
-      .listen(3000);
+       cluster(server)
+        .use(cluster.reloader('lib', 'SIGQUIT'))
+        .listen(3000);
