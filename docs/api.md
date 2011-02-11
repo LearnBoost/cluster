@@ -77,7 +77,6 @@
    - `kill`. When a `signal` is being sent to all workers
    - `restart`. Restart requested by REPL or signal
 
-
 ### Master#set(option, value)
 
   Set `option` to `value`.
