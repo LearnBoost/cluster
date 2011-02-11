@@ -1,7 +1,7 @@
 
 # Cluster
 
- Cluster is an extensible server manager for [node.js](http://nodejs.org).
+ Cluster is an extensible multi-core server manager for [node.js](http://nodejs.org).
 
 ## Features
 
