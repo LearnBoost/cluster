@@ -1,5 +1,5 @@
 
-## Reload
+## Reloader
 
   Restart the server the given `files` have changed.
   `files` may be several directories, filenames, etc.
