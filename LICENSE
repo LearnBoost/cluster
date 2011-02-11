@@ -1,43 +1,6 @@
-
-# Cluster
-
- Cluster is an extensible multi-core server manager for [node.js](http://nodejs.org).
-
-## Features
-
-  - hard shutdown support
-  - graceful shutdown support
-  - resuscitates workers
-  - workers commit suicide when master dies 
-  - spawns one worker per cpu (by default)
-  - extensible via plugins
-  - bundled plugins
-    - debug: verbose debugging information
-    - logger: master / worker logs
-    - pidfiles: writes master / worker pidfiles
-    - reload: reloads workers when files change
-    - repl: perform real-time administration
-    - stats: adds real-time statistics to the `repl` plugin
-
-## Running Tests
-
-First:
-
-     $ git submodule update --init
-
-Then:
-
-     $ make test
-
-## Authors
-
-  * TJ Holowaychuk
-
-## License 
-
 (The MIT License)
 
-Copyright (c) 2011 LearnBoost &lt;dev@learnboost.com&gt;
+Copyright (c) 2011 LearnBoost <dev@learnboost.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
