@@ -13,15 +13,15 @@
 
 <p>To utilize simply <code>use()</code> both the <code>stats()</code> and <code>repl()</code> plugins.</p>
 
-<pre><code>cluster(server)
-  .use(cluster.stats())
-  .use(cluster.repl(8888))
-  .listen(3000);
+<pre><code>  cluster(server)
+    .use(cluster.stats())
+    .use(cluster.repl(8888))
+    .listen(3000);
 </code></pre>
 
 <p>Telnet to the repl:</p>
 
-<pre><code>$ telnet localhost 8888
+<pre><code>  $ telnet localhost 8888
 </code></pre>
 
 <h3 id="stats-">stats()</h3>

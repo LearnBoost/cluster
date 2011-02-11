@@ -26,25 +26,25 @@
 
 <p> A plugin simple a function that accepts the <code>master</code> process. Most plugin functions <em>return</em> another anonymous function, allowing them to accept options, for example:</p>
 
-<pre><code>  function myPlugin(path){
-    return function(master) {
-      // do stuff
-    }
+<pre><code>function myPlugin(path){
+  return function(master) {
+    // do stuff
   }
+}
 </code></pre>
 
 <p> To use them, all we need to do is pass it to the <code>use()</code> method:</p>
 
-<pre><code>  cluster(server)
-    .use(myPlugin('/some/path'))
-    .listen(3000);
+<pre><code>cluster(server)
+  .use(myPlugin('/some/path'))
+  .listen(3000);
 </code></pre>
 
 <p> To use a plugin that is bundled with Cluster simply grab it from the <code>cluster</code> object:</p>
 
-<pre><code>   cluster(server)
-     .use(cluster.logger())
-     .listen(3000);
+<pre><code> cluster(server)
+   .use(cluster.logger())
+   .listen(3000);
 </code></pre>
 
 <h3 id="Settings">Settings</h3>
@@ -53,18 +53,18 @@
 
 <ul>
 <li> <code>workers</code>  Number of workers to spawn, defaults to the number of CPUs</li>
-<li> <code>working directory</code>  Working directory defaulting to <code>/</code></li>
-<li> <code>backlog</code>  Connection backlog, defaulting to 128</li>
-<li> <code>socket path</code>  Master socket path defaulting to <code>./master.sock</code></li>
+<li> 'working directory<code> Working directory defaulting to</code>/`</li>
+<li> 'backlog`  Connection backlog, defaulting to 128</li>
+<li> 'socket path<code> Master socket path defaulting to</code>./master.sock`</li>
 </ul>
 
 
 <p> We can take what we have now, and go on to apply settings using the <code>set(option, value)</code> method. For example:</p>
 
-<pre><code>  cluster(server)
-    .set('working directory', '/')
-    .set('workers', 5)
-    .listen(3000);
+<pre><code>cluster(server)
+  .set('working directory', '/')
+  .set('workers', 5)
+  .listen(3000);
 </code></pre>
 
 <h3 id="Signals">Signals</h3>
@@ -88,7 +88,6 @@
 <li> <code>start</code>. When the server is starting (pre-spawn)</li>
 <li> <code>worker</code>. When a worker is spawned, passing the <code>worker</code></li>
 <li> <code>listening</code>. When the server is listening for connections (post-spawn)</li>
-<li> <code>broadcast</code>. When master is broadcasting a <code>cmd</code> with <code>args</code></li>
 <li> <code>closing</code>. When master is gracefully shutting down</li>
 <li> <code>close</code>. When master has completed shutting down</li>
 <li> <code>worker killed</code>. When a worker has died</li>
@@ -96,6 +95,36 @@
 <li> <code>restart</code>. Restart requested by REPL or signal</li>
 </ul>
 
+
+<h3 id="Master-set-option-value-">Master#set(option, value)</h3>
+
+<p>  Set <code>option</code> to <code>value</code>.</p>
+
+<h3 id="Master-use-plugin-">Master#use(plugin)</h3>
+
+<p>  Register a <code>plugin</code> for use.</p>
+
+<h3 id="Master-spawn-n-">Master#spawn(n)</h3>
+
+<p>  Spawn <code>n</code> additional workers.</p>
+
+<h3 id="Master-close-">Master#close()</h3>
+
+<p>  Graceful shutdown, waits for all workers to reply before exiting.</p>
+
+<h3 id="Master-destroy-">Master#destroy()</h3>
+
+<p>  Hard shutdown, immediately kill all workers.</p>
+
+<h3 id="Master-restart-signal-">Master#restart([signal])</h3>
+
+<p>  Graceful restart by sending <strong>SIGQUIT</strong> to all workers. Optionally
+  an alternate <code>signal</code> such as <strong>SIGTERM</strong> may be sent to force
+  a hard restart.</p>
+
+<h3 id="Master-kill-signal-">Master#kill([signal])</h3>
+
+<p> Sends <strong>SIGTERM</strong> or <code>signal</code> to all worker processes. This method is used by <code>Master#restart()</code>, <code>Master#close()</code> etc.</p>
 
 </div>
     </div>

@@ -16,20 +16,19 @@ The `logger([path[, level]])` plugin accepts an optional `path`, and optional `l
 
 Outputting to `./logs`:
 
-   cluster(server)
-     .use(cluster.logger())
-     .listen(3000);
+     cluster(server)
+       .use(cluster.logger())
+       .listen(3000);
 
 
 Outputting to `./tmp/logs`:
 
-   cluster(server)
-     .use(cluster.logger('tmp/logs'))
-     .listen(3000);
-
+     cluster(server)
+       .use(cluster.logger('tmp/logs'))
+       .listen(3000);
 
 Outputting to `/var/log/node` with a log level of `debug`:
 
-    cluster(server)
-      .use(cluster.logger('/var/log/node', 'debug'))
-      .listen(3000);
+      cluster(server)
+        .use(cluster.logger('/var/log/node', 'debug'))
+        .listen(3000);

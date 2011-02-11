@@ -23,25 +23,23 @@
 
 <p>Outputting to <code>./logs</code>:</p>
 
-<p>   cluster(server)</p>
-
-<pre><code> .use(cluster.logger())
- .listen(3000);
+<pre><code> cluster(server)
+   .use(cluster.logger())
+   .listen(3000);
 </code></pre>
 
 <p>Outputting to <code>./tmp/logs</code>:</p>
 
-<p>   cluster(server)</p>
-
-<pre><code> .use(cluster.logger('tmp/logs'))
- .listen(3000);
+<pre><code> cluster(server)
+   .use(cluster.logger('tmp/logs'))
+   .listen(3000);
 </code></pre>
 
 <p>Outputting to <code>/var/log/node</code> with a log level of <code>debug</code>:</p>
 
-<pre><code>cluster(server)
-  .use(cluster.logger('/var/log/node', 'debug'))
-  .listen(3000);
+<pre><code>  cluster(server)
+    .use(cluster.logger('/var/log/node', 'debug'))
+    .listen(3000);
 </code></pre>
 
 </div>
