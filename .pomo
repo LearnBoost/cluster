@@ -64,3 +64,8 @@
   description: 
   length: 25
   name: ensure dying worker does not accept new connections
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: 0.2.6 support ?
