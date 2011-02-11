@@ -13,8 +13,32 @@ a:hover {
   text-decoration: underline;
 }
 
+.description {
+  display: block;
+  width: 100%;
+}
+
 #footer {
-  margin: 65px 0;
+  margin: 5px 0;
+  float: left;
+  clear: left;
+}
+
+#plugins {
+  border-left: 1px solid #eee;
+  height: 150px;
+}
+
+ul {
+  margin: 40px 0;
+  padding: 0 20px;
+  float: left;
+}
+
+ul li {
+  margin: 0;
+  list-style: none;
+  padding: 3px 0;
 }
 
 .button {
