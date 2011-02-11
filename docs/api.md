@@ -71,9 +71,39 @@
    - `start`. When the server is starting (pre-spawn)
    - `worker`. When a worker is spawned, passing the `worker`
    - `listening`. When the server is listening for connections (post-spawn)
-   - `broadcast`. When master is broadcasting a `cmd` with `args`
    - `closing`. When master is gracefully shutting down
    - `close`. When master has completed shutting down
    - `worker killed`. When a worker has died
    - `kill`. When a `signal` is being sent to all workers
    - `restart`. Restart requested by REPL or signal
+
+
+### Master#set(option, value)
+
+  Set `option` to `value`.
+
+### Master#use(plugin)
+
+  Register a `plugin` for use.
+
+### Master#spawn(n)
+
+  Spawn `n` additional workers.
+
+### Master#close()
+
+  Graceful shutdown, waits for all workers to reply before exiting.
+
+### Master#destroy()
+
+  Hard shutdown, immediately kill all workers.
+
+### Master#restart([signal])
+
+  Graceful restart by sending __SIGQUIT__ to all workers. Optionally
+  an alternate `signal` such as __SIGTERM__ may be sent to force
+  a hard restart.
+
+### Master#kill([signal])
+
+ Sends __SIGTERM__ or `signal` to all worker processes. This method is used by `Master#restart()`, `Master#close()` etc.
