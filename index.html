@@ -11,6 +11,26 @@
   <body>
     <h1>Cluster</h1>
     <span class="description">extensible multi-core server management for <a href="http://nodejs.org">nodejs</a>.</span>
+    
+    <ul id="features">
+      <li>extensible via plugins</li>
+      <li>various signal support</li>
+      <li>hard shutdown support</li>
+      <li>graceful shutdown support</li>
+      <li>resuscitates workers</li>
+      <li>workers commit suicide when master dies</li>
+      <li>spawns one worker per cpu (by default)</li>
+    </ul>
+    
+    <ul id="plugins">
+      <li><a href="#">debug</a> verbose debugging information</li>
+      <li><a href="#">logger</a> master / worker access and error logs</li>
+      <li><a href="#">pidfiles</a> writes master / worker pid files</li>
+      <li><a href="#">reload</a> reloads workers when files change</li>
+      <li><a href="#">repl</a> perform real-time administration</li>
+      <li><a href="#">stats</a> adds real-time statistics to the repl plugin</li>
+    </ul>
+    
     <div id="footer">
       <a class="button" href="http://github.com/learnboost/cluster">View Source</a>
     </div>
