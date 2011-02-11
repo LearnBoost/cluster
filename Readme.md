@@ -5,6 +5,7 @@
 
 ## Features
 
+  - zero-downtime restart
   - hard shutdown support
   - graceful shutdown support
   - resuscitates workers
