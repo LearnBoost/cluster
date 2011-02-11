@@ -43,9 +43,9 @@
  Below are the settings available:
  
    - `workers`  Number of workers to spawn, defaults to the number of CPUs
-   - 'working directory`  Working directory defaulting to `/`
-   - 'backlog`  Connection backlog, defaulting to 128
-   - 'socket path`  Master socket path defaulting to `./master.sock`
+   - `working directory`  Working directory defaulting to `/`
+   - `backlog`  Connection backlog, defaulting to 128
+   - `socket path`  Master socket path defaulting to `./master.sock`
 
  We can take what we have now, and go on to apply settings using the `set(option, value)` method. For example:
  

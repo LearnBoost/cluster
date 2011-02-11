@@ -43,21 +43,33 @@ pre {
   clear: left;
 }
 
-#plugins {
+ul#plugins {
   border-left: 1px solid #eee;
   height: 150px;
 }
 
-ul {
+ul#plugins, ul#features {
   margin: 40px 0;
   padding: 0 20px;
   float: left;
 }
 
-ul li {
-  margin: 0;
+ul#plugins li, ul#features li {
   list-style: none;
+}
+
+ul {
+  padding: 0 15px;
+}
+
+ul li {
+  margin: 0 5px;
   padding: 3px 0;
+}
+
+ul li code,
+p code {
+  color: #3b88d8;
 }
 
 .button {
