@@ -1,0 +1,48 @@
+<div class='mp'>
+<h2 id="Stats">Stats</h2>
+
+<p> The stats plugin collects statistics from the events emitter by the master process, and exposes a <code>stats()</code> <strong>REPL</strong> function.</p>
+
+<h3 id="Usage">Usage</h3>
+
+<p>To utilize simply <code>use()</code> both the <code>stats()</code> and <code>repl()</code> plugins.</p>
+
+<pre><code>cluster(server)
+  .use(cluster.stats())
+  .use(cluster.repl(8888))
+  .listen(3000);
+</code></pre>
+
+<p>Telnet to the repl:</p>
+
+<pre><code>$ telnet localhost 8888
+</code></pre>
+
+<h3 id="stats-">stats()</h3>
+
+<p> After manually killing two workers, the stats below show information regarding system load average, uptime, total workers spawned, deaths, worker-specific stats and more.</p>
+
+<pre><code>cluster&gt; stats()
+
+  Master
+  os: Darwin 10.5.0
+  state: active
+  started: Fri, 11 Feb 2011 16:58:48 GMT
+  uptime: 2 minutes
+  workers: 4
+  deaths: 2
+
+  Resources
+  load average: 0.35 0.23 0.15
+  cores utilized: 4 / 4
+  memory at boot (free / total): 2.18gb / 4.00gb
+  memory now (free / total): 2.08gb / 4.00gb
+
+  Workers
+  uptime #0: 2 minutes
+  uptime #1: 2 minutes
+  uptime #2: 1 minute
+  uptime #3: 22 seconds
+</code></pre>
+
+</div>

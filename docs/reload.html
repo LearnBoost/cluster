@@ -1,0 +1,32 @@
+<div class='mp'>
+<h2 id="Reload">Reload</h2>
+
+<p>  Restart the server the given <code>files</code> have changed.
+  <code>files</code> may be several directories, filenames, etc.</p>
+
+<h3 id="Usage">Usage</h3>
+
+<p> The <code>reloader(paths[, signal])</code> plugin accepts a single path, or an array of paths, watching for <strong>mtime</strong> changes, and re-loading the workers when a change has been made. By default the <strong>SIGTERM</strong> signal is sent, killing the workers immediately, however we may pass a <code>signal</code> for graceful termination as well.</p>
+
+<p> Reload when files in <code>./lib</code> change:</p>
+
+<pre><code>  cluster(server)
+    .use(cluster.reloader('lib'))
+    .listen(3000);
+</code></pre>
+
+<p> Reload when files in <code>./lib</code>, <code>./tests</code>, or the <code>./index.js</code> file change:</p>
+
+<pre><code>  cluster(server)
+    .use(cluster.reloader(['lib', 'tests', 'index.js']))
+    .listen(3000);
+</code></pre>
+
+<p> Graceful shutdown:</p>
+
+<pre><code> cluster(server)
+  .use(cluster.reloader('lib', 'SIGQUIT'))
+  .listen(3000);
+</code></pre>
+
+</div>

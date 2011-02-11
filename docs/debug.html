@@ -1,0 +1,32 @@
+<div class='mp'>
+<h2 id="Debug">Debug</h2>
+
+<p>Outputs verbose debugging information to <em>stderr</em>.</p>
+
+<pre><code>  info - master started
+  info - worker 0 spawned
+  info - worker 1 spawned
+  info - worker 2 spawned
+  info - worker 3 spawned
+  info - worker 2 connected
+  info - worker 0 connected
+  info - worker 3 connected
+  info - worker 1 connected
+  info - listening for connections
+^C  info - shutting down
+  warning - kill(SIGKILL)
+  info - shutdown complete
+  warning - worker 2 died
+  warning - worker 0 died
+  warning - worker 3 died
+</code></pre>
+
+<h2 id="Usage">Usage</h2>
+
+<p>   cluster(server)</p>
+
+<pre><code> .use(cluster.debug())
+ .listen(3000);
+</code></pre>
+
+</div>

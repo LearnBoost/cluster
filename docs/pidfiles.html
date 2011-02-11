@@ -1,0 +1,33 @@
+<div class='mp'>
+<h2 id="PID-Files">PID Files</h2>
+
+<p> Saves out PID files, for example:</p>
+
+<pre><code>   master.pid
+   worker.0.pid
+   worker.1.pid
+   worker.2.pid
+   worker.3.pid
+</code></pre>
+
+<h3 id="Usage">Usage</h3>
+
+<p>The <code>pidfiles([path])</code> plugin saves pid (process-id) files to the given <code>path</code> or <code>./pids</code>.</p>
+
+<p>save to <code>./pids</code>:</p>
+
+<p>   cluster(server)</p>
+
+<pre><code> .use(cluster.pidfiles())
+ .listen(3000);
+</code></pre>
+
+<p>save to <code>/var/run/node</code>:</p>
+
+<p>   cluster(server)</p>
+
+<pre><code> .use(cluster.logger('/var/run/node'))
+ .listen(3000);
+</code></pre>
+
+</div>

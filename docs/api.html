@@ -1,0 +1,94 @@
+<div class='mp'>
+<h2 id="API">API</h2>
+
+<p> The Cluster API at its core is extremely simple, all we need to do is pass
+ our http <code>server</code> to <code>cluster()</code>, then call <code>listen()</code> as we would on the <code>http.Server</code> itself.</p>
+
+<pre><code> var cluster = require('../')
+   , http = require('http');
+
+ var server = http.createServer(function(req, res){
+   res.writeHead(200);
+   res.end('Hello World');
+ });
+
+ cluster(server)
+   .listen(3000);
+</code></pre>
+
+<h3 id="Plugins">Plugins</h3>
+
+<p> A plugin simple a function that accepts the <code>master</code> process. Most plugin functions <em>return</em> another anonymous function, allowing them to accept options, for example:</p>
+
+<pre><code>function myPlugin(path){
+  return function(master) {
+    // do stuff
+  }
+}
+</code></pre>
+
+<p> To use them, all we need to do is pass it to the <code>use()</code> method:</p>
+
+<pre><code>cluster(server)
+  .use(myPlugin('/some/path'))
+  .listen(3000);
+</code></pre>
+
+<p> To use a plugin that is bundled with Cluster simply grab it from the <code>cluster</code> object:</p>
+
+<pre><code> cluster(server)
+   .use(cluster.logger())
+   .listen(3000);
+</code></pre>
+
+<h3 id="Settings">Settings</h3>
+
+<p> Below are the settings available:</p>
+
+<ul>
+<li> <code>workers</code>  Number of workers to spawn, defaults to the number of CPUs</li>
+<li> 'working directory<code> Working directory defaulting to</code>/`</li>
+<li> 'backlog`  Connection backlog, defaulting to 128</li>
+<li> 'socket path<code> Master socket path defaulting to</code>./master.sock`</li>
+</ul>
+
+
+<p> We can take what we have now, and go on to apply settings using the <code>set(option, value)</code> method. For example:</p>
+
+<pre><code>cluster(server)
+  .set('working directory', '/')
+  .set('workers', 5)
+  .listen(3000);
+</code></pre>
+
+<h3 id="Signals">Signals</h3>
+
+<p> Cluster performs the following actions when handling signals:</p>
+
+<ul>
+<li> <code>SIGINT</code>   hard shutdown</li>
+<li> <code>SIGTERM</code>  hard shutdown</li>
+<li> <code>SIGQUIT</code>  graceful shutdown</li>
+<li> <code>SIGUSR2</code>  restart workers</li>
+<li> <code>SIGHUP</code>   ignored</li>
+</ul>
+
+
+<h3 id="Events">Events</h3>
+
+<p> The following events are emitted, useful for plugins or general purpose logging etc.</p>
+
+<ul>
+<li> <code>start</code>. When the server is starting (pre-spawn)</li>
+<li> <code>worker</code>. When a worker is spawned, passing the <code>worker</code></li>
+<li> <code>listening</code>. When the server is listening for connections (post-spawn)</li>
+<li> <code>broadcast</code>. When master is broadcasting a <code>cmd</code> with <code>args</code></li>
+<li> <code>closing</code>. When master is gracefully shutting down</li>
+<li> <code>close</code>. When master has completed shutting down</li>
+<li> <code>worker killed</code>. When a worker has died</li>
+<li> <code>kill</code>. When a <code>signal</code> is being sent to all workers</li>
+<li> <code>restart</code>. Restart requested by REPL or signal</li>
+</ul>
+
+
+</div>
