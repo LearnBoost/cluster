@@ -59,3 +59,8 @@
   description: 
   length: 25
   name: fix restart race-condition, fails after a request is issued
+- !ruby/object:Pomo::Task 
+  complete: false
+  description: 
+  length: 25
+  name: ensure dying worker does not accept new connections
