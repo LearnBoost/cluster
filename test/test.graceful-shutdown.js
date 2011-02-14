@@ -13,7 +13,7 @@ var calls = 0;
 
 // child process
 
-var child = spawn('node', [__dirname + '/master.js']);
+var child = spawn('node', [__dirname + '/support/server.js']);
 
 // listening
 

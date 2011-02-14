@@ -3,12 +3,12 @@
  * Module dependencies.
  */
 
-var cluster = require('../')
-  , should = require('../support/should')
+var cluster = require('../../')
+  , should = require('../../support/should')
   , http = require('http')
   , fs = require('fs');
 
-require('./common');
+require('../common');
 
 var server = http.createServer(function(req, res){
   setTimeout(function(){
