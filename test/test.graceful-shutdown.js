@@ -4,7 +4,6 @@
  */
 
 var spawn = require('child_process').spawn
-  , should = require('should')
   , http = require('http');
 
 require('./common');

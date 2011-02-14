@@ -3,7 +3,8 @@
  * Module dependencies.
  */
 
-var http = require('http');
+var http = require('http')
+  , should = require('../support/should');
 
 // COMPAT:
 
