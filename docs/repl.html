@@ -137,6 +137,42 @@ cluster&gt; pids()
    worker #3: 1847
 </code></pre>
 
+<h3 id="Defining-REPL-Functions">Defining REPL Functions</h3>
+
+<p> To define a function accessible to the <strong>REPL</strong>, all we need to do is call <code>cluster.repl.define()</code>, passing the function, as well as a description string.</p>
+
+<p> Below we define the <code>echo()</code> function, simply printing the input <code>msg</code> given. As you can see our function receivers the <code>Master</code> instance, the <strong>REPL</strong> <code>sock</code>, and any arguments that were passed. For example <code>echo("test")</code> would pass the <code>msg</code> as <code>"test"</code>, and <code>echo("foo", "bar")</code> would pass <code>msg</code> as <code>"foo"</code>, and <code>arguments[3]</code> as <code>"bar"</code>.</p>
+
+<pre><code>   repl.define('echo', function(master, sock, msg){
+     sock.write(msg + '\n');
+   }, 'echo the given message');
+</code></pre>
+
+<p> Shown below is a more complete example.</p>
+
+<pre><code>  var cluster = require('../')
+    , repl = cluster.repl
+    , http = require('http');
+
+  var server = http.createServer(function(req, res){
+    var body = 'Hello World';
+    res.writeHead(200, { 'Content-Length': body.length });
+    res.end(body);
+  });
+
+  // custom repl function
+
+  repl.define('echo', function(master, sock, msg){
+    sock.write(msg + '\n');
+  }, 'echo the given message');
+
+  // $ telnet localhots 8888
+
+  cluster(server)
+    .use(repl(8888))
+    .listen(3000);
+</code></pre>
+
 </div>
     </div>
   </body>

@@ -7,15 +7,7 @@
     <div id="content"><div class='mp'>
 <h2 id="Logger">Logger</h2>
 
-<p> File-based logging of both the <em>master</em> and <em>worker</em> processes.
- For example if you spawn 2 workers, you will get the following log files:</p>
-
-<pre><code>   master.log
-   worker.0.access.log
-   worker.0.error.log
-   worker.1.access.log
-   worker.1.error.log
-</code></pre>
+<p> File-based logging of both the <em>master</em> and <em>worker</em> processes.</p>
 
 <h3 id="Usage">Usage</h3>
 
@@ -40,6 +32,13 @@
 <pre><code>  cluster(server)
     .use(cluster.logger('/var/log/node', 'debug'))
     .listen(3000);
+</code></pre>
+
+<p>Generated files:</p>
+
+<pre><code>  master.log
+  workers.access.log
+  workers.error.log
 </code></pre>
 
 </div>
