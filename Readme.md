@@ -19,6 +19,8 @@
     - reload: reloads workers when files change
     - repl: perform real-time administration
     - stats: adds real-time statistics to the `repl` plugin
+  - supports node 0.2.x
+  - supports node 0.4.x
 
 ## Running Tests
 
