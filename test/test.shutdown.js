@@ -23,7 +23,7 @@ child.stdout.on('data', function(chunk){
   http.get(options, function(res){
     ++calls;
     res.statusCode.should.equal(200);
-    child.kill('SIGQUIT');
+    child.kill('SIGTERM');
   });
   
   http.get(options, function(res){
@@ -43,5 +43,5 @@ child.stdout.on('data', function(chunk){
 });
 
 child.on('exit', function(){
-  calls.should.equal(4);
+  calls.should.not.equal(2);
 });
