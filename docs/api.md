@@ -42,7 +42,7 @@
 
  Below are the settings available:
  
-   - `workers`  Number of workers to spawn, defaults to the number of CPUs
+   - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
    - 'working directory`  Working directory defaulting to `/`
    - 'backlog`  Connection backlog, defaulting to 128
    - 'socket path`  Master socket path defaulting to `./master.sock`
