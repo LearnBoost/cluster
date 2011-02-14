@@ -29,7 +29,10 @@ cluster.on('listening', function(){
       files.should.contain('master.log');
       files.should.contain('workers.access.log');
       files.should.contain('workers.error.log');
-      cluster.close();
+      fs.readFile(__dirname + '/logs/workers.access.log', 'ascii', function(err, str){
+        str.should.match(/^GET \//);
+        cluster.close();
+      });
     });
   });
 });
