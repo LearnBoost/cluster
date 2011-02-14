@@ -3,6 +3,10 @@
 
  [Cluster](http://learnboost.github.com/cluster) is an extensible multi-core server manager for [node.js](http://nodejs.org).
 
+## Installation
+
+    $ npm install cluster
+
 ## Features
 
   - zero-downtime restart
@@ -21,6 +25,24 @@
     - stats: adds real-time statistics to the `repl` plugin
   - supports node 0.2.x
   - supports node 0.4.x
+
+## Examples
+
+      var cluster = require('cluster')
+        , http = require('http');
+
+      var server = http.createServer(function(req, res){
+        console.log('%s %s', req.method, req.url);
+        var body = 'Hello World';
+        res.writeHead(200, { 'Content-Length': body.length });
+        res.end(body);
+      });
+
+      cluster(server)
+        .use(cluster.logger('logs'))
+        .use(cluster.stats())
+        .use(cluster.repl(8888))
+        .listen(3000);
 
 ## Running Tests
 
