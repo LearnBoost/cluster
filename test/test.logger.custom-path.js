@@ -8,6 +8,8 @@ var cluster = require('../')
   , http = require('http')
   , fs = require('fs');
 
+require('./common');
+
 var server = http.createServer(function(req, res){
   console.log('%s %s', req.method, req.url);
   res.writeHead(200);
