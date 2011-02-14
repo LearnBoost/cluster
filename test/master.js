@@ -19,7 +19,6 @@ var server = http.createServer(function(req, res){
 
 cluster = cluster(server)
   .set('workers', 2)
-  .use(cluster.pidfiles())
   .listen(3000);
 
 cluster.on('listening', function(){
