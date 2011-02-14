@@ -123,4 +123,37 @@ Kill worker `id` with the given `signal` or __SIGTERM__. For graceful terminatio
        worker #1: 1849
        worker #2: 1848
        worker #3: 1847
+
+### Defining REPL Functions
+
+ To define a function accessible to the __REPL__, all we need to do is call `cluster.repl.define()`, passing the function, as well as a description string.
+
+ Below we define the `echo()` function, simply printing the input `msg` given. As you can see our function receivers the `Master` instance, the __REPL__ `sock`, and any arguments that were passed. For example `echo("test")` would pass the `msg` as `"test"`, and `echo("foo", "bar")` would pass `msg` as `"foo"`, and `arguments[3]` as `"bar"`.
  
+       repl.define('echo', function(master, sock, msg){
+         sock.write(msg + '\n');
+       }, 'echo the given message');
+
+ Shown below is a more complete example.
+
+      var cluster = require('../')
+        , repl = cluster.repl
+        , http = require('http');
+
+      var server = http.createServer(function(req, res){
+        var body = 'Hello World';
+        res.writeHead(200, { 'Content-Length': body.length });
+        res.end(body);
+      });
+
+      // custom repl function
+
+      repl.define('echo', function(master, sock, msg){
+        sock.write(msg + '\n');
+      }, 'echo the given message');
+
+      // $ telnet localhots 8888
+
+      cluster(server)
+        .use(repl(8888))
+        .listen(3000);

@@ -42,10 +42,12 @@
 
  Below are the settings available:
  
-   - `workers`  Number of workers to spawn, defaults to the number of CPUs
+   - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
    - 'working directory`  Working directory defaulting to `/`
    - 'backlog`  Connection backlog, defaulting to 128
    - 'socket path`  Master socket path defaulting to `./master.sock`
+   - 'user`  User id / name
+   - 'group`  Group id / name
 
  We can take what we have now, and go on to apply settings using the `set(option, value)` method. For example:
  
@@ -62,7 +64,7 @@
    - `SIGTERM`  hard shutdown
    - `SIGQUIT`  graceful shutdown
    - `SIGUSR2`  restart workers
-   - `SIGHUP`   ignored
+   - `SIGHUP`   restart workers
 
 ### Events
 
@@ -76,7 +78,6 @@
    - `worker killed`. When a worker has died
    - `kill`. When a `signal` is being sent to all workers
    - `restart`. Restart requested by REPL or signal
-
 
 ### Master#set(option, value)
 
