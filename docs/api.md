@@ -62,7 +62,7 @@
    - `SIGTERM`  hard shutdown
    - `SIGQUIT`  graceful shutdown
    - `SIGUSR2`  restart workers
-   - `SIGHUP`   ignored
+   - `SIGHUP`   restart workers
 
 ### Events
 
