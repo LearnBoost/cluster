@@ -43,12 +43,12 @@
  Below are the settings available:
  
    - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
-   - 'working directory`  Working directory defaulting to `/`
-   - 'backlog`  Connection backlog, defaulting to 128
-   - 'socket path`  Master socket path defaulting to `./master.sock`
-   - 'timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
-   - 'user`  User id / name
-   - 'group`  Group id / name
+   - `working directory`  Working directory defaulting to `/`
+   - `backlog`  Connection backlog, defaulting to 128
+   - `socket path`  Master socket path defaulting to `./master.sock`
+   - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
+   - `user`  User id / name
+   - `group`  Group id / name
 
  We can take what we have now, and go on to apply settings using the `set(option, value)` method. For example:
  
