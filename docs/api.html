@@ -56,6 +56,7 @@
 <li> 'working directory<code> Working directory defaulting to</code>/`</li>
 <li> 'backlog`  Connection backlog, defaulting to 128</li>
 <li> 'socket path<code> Master socket path defaulting to</code>./master.sock`</li>
+<li> 'timeout<code>Worker shutdown timeout in milliseconds, defaulting to</code>60000`</li>
 <li> 'user`  User id / name</li>
 <li> 'group`  Group id / name</li>
 </ul>
@@ -97,6 +98,28 @@
 <li> <code>restart</code>. Restart requested by REPL or signal</li>
 </ul>
 
+
+<h3 id="Master-isWorker">Master#isWorker</h3>
+
+<p> <code>true</code> when the script is executed as a worker.</p>
+
+<pre><code>  cluster = cluster(server).listen(3000);
+
+  if (cluster.isWorker) {
+    // do something
+  }
+</code></pre>
+
+<h3 id="Master-isMaster">Master#isMaster</h3>
+
+<p><code>true</code> when the script is executed as master.</p>
+
+<pre><code> cluster = cluster(server).listen(3000);
+
+ if (cluster.isMaster) {
+   // do something
+ }
+</code></pre>
 
 <h3 id="Master-set-option-value-">Master#set(option, value)</h3>
 
