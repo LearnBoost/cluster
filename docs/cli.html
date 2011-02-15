@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Cluster - extensible multi-core server management for nodejs</title>
+    <link rel='stylesheet' href='../main.css' />
+  </head>
+  <body class="subpage">
+    <div id="content"><div class='mp'>
+<h2 id="CLI">CLI</h2>
+
+<p> Adds a command-line interface to your cluster.</p>
+
+<h3 id="Usage">Usage</h3>
+
+<p>This plugin requires that you use <code>pidfiles()</code>
+above <code>cli()</code>, so that the pidfile directory
+is exposed.</p>
+
+<pre><code>  cluster(server)
+    .use(cluster.pidfiles())
+    .use(cluster.cli())
+    .listen(3000);
+</code></pre>
+
+<p>Once set up our server script serves as both
+the master, and the CLI. For example we may
+still launch the server(s) as shown below.</p>
+
+<pre><code>   $ nohup node server.js &amp;
+</code></pre>
+
+<p>However now we may also utilize commands
+provided by this plugin.</p>
+
+<pre><code>  $ node server.js status
+
+  master 3281 dead
+  worker 0 3282 dead
+</code></pre>
+
+<p>For more command information use <code>--help</code>.</p>
+
+<pre><code>  $ node server.js --help
+</code></pre>
+
+<h3 id="Defining-CLI-Commands">Defining CLI Commands</h3>
+
+<p> Plugins may define additional commands, simply by invoking <code>cluster.cli.define()</code> passing the flag(s), a callback function,
+ and a description. Below is the implementation of <code>--help</code> for reference:</p>
+
+<pre><code>  exports.define('-h, --help, help', function(master){
+    console.log('\n  Usage: node &lt;file> &lt;command>\n');
+    commands.forEach(function(command){
+      console.log('    '
+        + command.flags.join(', ')
+        + '\n    '
+        + '\033[90m' + command.desc + '\033[0m'
+        + '\n');
+    });
+    console.log();
+    process.exit();
+  }, 'Show help information');
+</code></pre>
+
+</div>
+    </div>
+  </body>
+</html>
