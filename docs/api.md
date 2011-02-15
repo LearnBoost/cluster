@@ -46,6 +46,7 @@
    - 'working directory`  Working directory defaulting to `/`
    - 'backlog`  Connection backlog, defaulting to 128
    - 'socket path`  Master socket path defaulting to `./master.sock`
+   - 'timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
    - 'user`  User id / name
    - 'group`  Group id / name
 
@@ -78,6 +79,26 @@
    - `worker killed`. When a worker has died
    - `kill`. When a `signal` is being sent to all workers
    - `restart`. Restart requested by REPL or signal
+
+### Master#isWorker
+
+ `true` when the script is executed as a worker.
+
+      cluster = cluster(server).listen(3000);
+
+      if (cluster.isWorker) {
+        // do something
+      }
+
+### Master#isMaster
+
+`true` when the script is executed as master.
+
+     cluster = cluster(server).listen(3000);
+
+     if (cluster.isMaster) {
+       // do something
+     }
 
 ### Master#set(option, value)
 
