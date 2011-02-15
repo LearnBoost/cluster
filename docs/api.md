@@ -46,6 +46,7 @@
    - 'working directory`  Working directory defaulting to `/`
    - 'backlog`  Connection backlog, defaulting to 128
    - 'socket path`  Master socket path defaulting to `./master.sock`
+   - 'timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
    - 'user`  User id / name
    - 'group`  Group id / name
 
