@@ -13,6 +13,15 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
+// Launch the cluster:
+//   $ nohup node examples/cli.js &
+
+// Check the status:
+//   $ node examples/cli.js status
+
+// View other commands:
+//   $ node examples/cli.js --help
+
 cluster(server)
   .use(cluster.pidfiles())
   .use(cluster.logger())
