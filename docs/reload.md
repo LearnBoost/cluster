@@ -4,6 +4,11 @@
   Restart the server the given `files` have changed.
   `files` may be several directories, filenames, etc.
 
+### Options
+
+  - `signal` Signal to send, defaults to __SIGTERM__
+  - `interval` Watcher interval, defaulting to `100`
+
 ### Usage
 
  The `reload(paths[, signal])` plugin accepts a single path, or an array of paths, watching for __mtime__ changes, and re-loading the workers when a change has been made. By default the __SIGTERM__ signal is sent, killing the workers immediately, however we may pass a `signal` for graceful termination as well.
@@ -23,5 +28,5 @@
  Graceful shutdown:
  
        cluster(server)
-        .use(cluster.reload('lib', 'SIGQUIT'))
+        .use(cluster.reload('lib', { signal: 'SIGQUIT' }))
         .listen(3000);
