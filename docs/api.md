@@ -79,6 +79,26 @@
    - `kill`. When a `signal` is being sent to all workers
    - `restart`. Restart requested by REPL or signal
 
+### Master#isWorker
+
+ `true` when the script is executed as a worker.
+
+      cluster = cluster(server).listen(3000);
+
+      if (cluster.isWorker) {
+        // do something
+      }
+
+### Master#isMaster
+
+`true` when the script is executed as master.
+
+     cluster = cluster(server).listen(3000);
+
+     if (cluster.isMaster) {
+       // do something
+     }
+
 ### Master#set(option, value)
 
   Set `option` to `value`.
