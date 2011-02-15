@@ -25,8 +25,11 @@ provided by this plugin.
 
       $ node server.js status
 
-      master 3281 dead
+      master 3281 alive
       worker 0 3282 dead
+      worker 1 3283 alive
+      worker 2 3284 alive
+      worker 3 3285 alive
 
 For more command information use `--help`.
 
@@ -37,7 +40,9 @@ For more command information use `--help`.
  Plugins may define additional commands, simply by invoking `cluster.cli.define()` passing the flag(s), a callback function,
  and a description. Below is the implementation of `--help` for reference:
 
-      exports.define('-h, --help, help', function(master){
+      var cli = require('cluster').cli;
+
+      cli.define('-h, --help, help', function(master){
         console.log('\n  Usage: node <file> <command>\n');
         commands.forEach(function(command){
           console.log('    '
