@@ -1,7 +1,7 @@
 #!/bin/sh
 
-rm -f logs/*.log
-rm -f logs/nested/*.log
+rm -f test/logs/*.log
+rm -f test/logs/nested/*.log
 
 killall -KILL node &> /dev/null
 
