@@ -17,6 +17,7 @@
   - spawns one worker per cpu (by default)
   - extensible via plugins
   - bundled plugins
+    - cli: provides a command-line interface for your cluster
     - debug: verbose debugging information
     - logger: master / worker logs
     - pidfiles: writes master / worker pidfiles
