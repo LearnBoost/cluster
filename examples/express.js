@@ -4,25 +4,16 @@
  */
 
 var cluster = require('../')
-  , RedisStore = require('connect-redis')
   , express = require('express')
   , http = require('http');
 
 // setup:
 //   $ npm install express
-//   $ npm install connect-redis
-//   $ redis-server
 
-var app = express.createServer()
-  , store = new RedisStore;
+var app = express.createServer();
 
-app.use(express.cookieDecoder());
-app.use(express.session({ store: store, secret: 'keyboard cat' }));
-app.use(express.favicon());
-app.use(function(req, res, next){
-  req.session.views = req.session.views || 0;
-  ++req.session.views;
-  res.end('views ' + req.session.views);
+app.get('/', function(req, res){
+  res.send('Hello World');
 });
 
 cluster(app)
