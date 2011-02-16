@@ -17,13 +17,13 @@
   - spawns one worker per cpu (by default)
   - extensible via plugins
   - bundled plugins
-    - cli: provides a command-line interface for your cluster
-    - debug: verbose debugging information
-    - logger: master / worker logs
-    - pidfiles: writes master / worker pidfiles
-    - reload: reloads workers when files change
-    - repl: perform real-time administration
-    - stats: adds real-time statistics to the `repl` plugin
+    - [cli](http://learnboost.github.com/cluster/docs/cli.html): provides a command-line interface for your cluster
+    - [debug](http://learnboost.github.com/cluster/docs/debug.html): verbose debugging information
+    - [logger](http://learnboost.github.com/cluster/docs/logger.html): master / worker logs
+    - [pidfiles](http://learnboost.github.com/cluster/docs/pidfiles.html): writes master / worker pidfiles
+    - [reload](http://learnboost.github.com/cluster/docs/reload.html): reloads workers when files change
+    - [repl](http://learnboost.github.com/cluster/docs/repl.html): perform real-time administration
+    - [stats](http://learnboost.github.com/cluster/docs/stats.html): adds real-time statistics to the `repl` plugin
   - supports node 0.2.x
   - supports node 0.4.x
 
