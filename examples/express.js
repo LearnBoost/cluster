@@ -17,5 +17,6 @@ app.get('/', function(req, res){
 });
 
 cluster(app)
+  .set('workers', 4)
   .use(cluster.debug())
   .listen(3000);
