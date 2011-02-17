@@ -1,4 +1,10 @@
 
+0.0.4 / 2011-02-17 
+==================
+
+  * Fixed `stats()` / `repl()` breakage when used with 0.2.x due to os mod. Closes #16
+  * Changed; close _REPL_ connections on shutdown
+
 0.0.3 / 2011-02-16 
 ==================
 
