@@ -22,6 +22,7 @@ cluster.repl.define('echo', function(master, sock, msg){
 // $ telnet localhots 8888
 
 cluster(server)
+  .set('workers', 4)
   .use(cluster.logger('logs'))
   .use(cluster.stats())
   .use(cluster.repl(8888))
