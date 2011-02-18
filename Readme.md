@@ -26,6 +26,7 @@
     - [stats](http://learnboost.github.com/cluster/docs/stats.html): adds real-time statistics to the `repl` plugin
   - supports node 0.2.x
   - supports node 0.4.x
+  - supports TCP servers
 
 ## Example
 

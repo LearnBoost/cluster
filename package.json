@@ -1,7 +1,7 @@
 {
   "name": "cluster",
   "description": "extensible multi-core server manager",
-  "keywords": ["server", "spark", "fugue"],
+  "keywords": ["server", "spark", "fugue", "tcp", "workers"],
   "version": "0.0.4",
   "homepage": "http://learnboost.github.com/cluster",
   "repository": "git://github.com/LearnBoost/cluster.git",
