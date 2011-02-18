@@ -130,9 +130,7 @@
 
 ### Master#restart([signal])
 
-  Graceful restart by sending __SIGQUIT__ to all workers. Optionally
-  an alternate `signal` such as __SIGTERM__ may be sent to force
-  a hard restart.
+  Defaults to a graceful restart, spawning a new master process, and sending __SIGQUIT__ to the previous master process. Alternatively a custom `signal` may be passed.
 
 ### Master#kill([signal])
 
