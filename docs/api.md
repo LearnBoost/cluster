@@ -130,6 +130,22 @@
        .in('development').listen(3000)
        .in('production').listen(80);
 
+ The environment conditionals may be applied to several calls:
+ 
+     cluster(server)
+       .set('working directory', '/')
+       .in('development')
+         .set('workers', 1)
+         .use(cluster.logger('logs', 'debug'))
+         .use(cluster.debug())
+         .listen(3000)
+       .in('production')
+         .set('workers', 4)
+         .use(cluster.logger())
+         .use(cluster.pidfiles())
+         .listen(80);
+ 
+
 ### Master#spawn(n)
 
   Spawn `n` additional workers.
