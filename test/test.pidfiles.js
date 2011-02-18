@@ -28,11 +28,9 @@ function checkFile(name) {
 
 cluster.on('listening', function(){
   fs.readdir(__dirname + '/pids', function(err, files){
-    files.should.have.length(4);
-    files.should.contain('master.pid');
+    // TODO: test master pid
     files.should.contain('worker.0.pid');
     files.should.contain('worker.1.pid');
-    checkFile('master.pid');
     checkFile('worker.0.pid');
     checkFile('worker.1.pid');
     cluster.close();
