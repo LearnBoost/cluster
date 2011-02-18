@@ -43,7 +43,7 @@
  Below are the settings available:
  
    - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
-   - `working directory`  Working directory defaulting to `/`
+   - `working directory`  Working directory defaulting to the script's dir
    - `backlog`  Connection backlog, defaulting to 128
    - `socket path`  Master socket path defaulting to `./`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
