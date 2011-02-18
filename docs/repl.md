@@ -24,7 +24,12 @@ Start a telnet session:
       spawn(n): Spawn one or more additional workers
       pids(): Output process ids
       kill(id, signal): Send signal or SIGTERM to the given worker
+      shutdown(): Gracefully shutdown server
+      stop(): Hard shutdown
       restart(): Gracefully restart all workers
+      echo(msg): echo the given message
+      stats(): Display server statistics
+
 
 ### pids()
 
