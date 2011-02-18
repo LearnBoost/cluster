@@ -45,7 +45,7 @@
    - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
    - `working directory`  Working directory defaulting to `/`
    - `backlog`  Connection backlog, defaulting to 128
-   - `socket path`  Master socket path defaulting to `./master.sock`
+   - `socket path`  Master socket path defaulting to `./`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
    - `user`  User id / name
    - `group`  Group id / name
@@ -78,7 +78,19 @@
    - `close`. When master has completed shutting down
    - `worker killed`. When a worker has died
    - `kill`. When a `signal` is being sent to all workers
-   - `restart`. Restart requested by REPL or signal
+   - `restarting`. Restart requested by REPL or signal. Receives an object
+     which can be patched in order to preserve plugin state.
+   - `restart`. Restart complete, new master established, previous killed.
+     Receives an object with state preserved by the `restarting` even,
+     patched in the previous master.
+
+### Master#state
+
+ Current state of the master process, one of:
+ 
+   - `active`
+   - `hard shutdown`
+   - `graceful shutdown`
 
 ### Master#isWorker
 
@@ -108,6 +120,32 @@
 
   Register a `plugin` for use.
 
+### Master#in(env)
+
+ Conditionally perform the following action, if 
+ __NODE_ENV__ matches `env`.
+
+     cluster(server)
+       .in('development').use(cluster.debug())
+       .in('development').listen(3000)
+       .in('production').listen(80);
+
+ The environment conditionals may be applied to several calls:
+ 
+     cluster(server)
+       .set('working directory', '/')
+       .in('development')
+         .set('workers', 1)
+         .use(cluster.logger('logs', 'debug'))
+         .use(cluster.debug())
+         .listen(3000)
+       .in('production')
+         .set('workers', 4)
+         .use(cluster.logger())
+         .use(cluster.pidfiles())
+         .listen(80);
+ 
+
 ### Master#spawn(n)
 
   Spawn `n` additional workers.
@@ -122,9 +160,7 @@
 
 ### Master#restart([signal])
 
-  Graceful restart by sending __SIGQUIT__ to all workers. Optionally
-  an alternate `signal` such as __SIGTERM__ may be sent to force
-  a hard restart.
+  Defaults to a graceful restart, spawning a new master process, and sending __SIGQUIT__ to the previous master process. Alternatively a custom `signal` may be passed.
 
 ### Master#kill([signal])
 

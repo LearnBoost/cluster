@@ -55,7 +55,7 @@
 <li> <code>workers</code>  Number of workers to spawn, defaults to the number of CPUs or <code>1</code></li>
 <li> <code>working directory</code>  Working directory defaulting to <code>/</code></li>
 <li> <code>backlog</code>  Connection backlog, defaulting to 128</li>
-<li> <code>socket path</code>  Master socket path defaulting to <code>./master.sock</code></li>
+<li> <code>socket path</code>  Master socket path defaulting to <code>./</code></li>
 <li> <code>timeout</code> Worker shutdown timeout in milliseconds, defaulting to <code>60000</code></li>
 <li> <code>user</code>  User id / name</li>
 <li> <code>group</code>  Group id / name</li>
@@ -95,7 +95,22 @@
 <li> <code>close</code>. When master has completed shutting down</li>
 <li> <code>worker killed</code>. When a worker has died</li>
 <li> <code>kill</code>. When a <code>signal</code> is being sent to all workers</li>
-<li> <code>restart</code>. Restart requested by REPL or signal</li>
+<li> <code>restarting</code>. Restart requested by REPL or signal. Receives an object
+ which can be patched in order to preserve plugin state.</li>
+<li> <code>restart</code>. Restart complete, new master established, previous killed.
+ Receives an object with state preserved by the <code>restarting</code> even,
+ patched in the previous master.</li>
+</ul>
+
+
+<h3 id="Master-state">Master#state</h3>
+
+<p> Current state of the master process, one of:</p>
+
+<ul>
+<li> <code>active</code></li>
+<li> <code>hard shutdown</code></li>
+<li> <code>graceful shutdown</code></li>
 </ul>
 
 
@@ -129,6 +144,33 @@
 
 <p>  Register a <code>plugin</code> for use.</p>
 
+<h3 id="Master-in-env-">Master#in(env)</h3>
+
+<p> Conditionally perform the following action, if
+ <strong>NODE_ENV</strong> matches <code>env</code>.</p>
+
+<pre><code> cluster(server)
+   .in('development').use(cluster.debug())
+   .in('development').listen(3000)
+   .in('production').listen(80);
+</code></pre>
+
+<p> The environment conditionals may be applied to several calls:</p>
+
+<pre><code> cluster(server)
+   .set('working directory', '/')
+   .in('development')
+     .set('workers', 1)
+     .use(cluster.logger('logs', 'debug'))
+     .use(cluster.debug())
+     .listen(3000)
+   .in('production')
+     .set('workers', 4)
+     .use(cluster.logger())
+     .use(cluster.pidfiles())
+     .listen(80);
+</code></pre>
+
 <h3 id="Master-spawn-n-">Master#spawn(n)</h3>
 
 <p>  Spawn <code>n</code> additional workers.</p>
@@ -143,9 +185,7 @@
 
 <h3 id="Master-restart-signal-">Master#restart([signal])</h3>
 
-<p>  Graceful restart by sending <strong>SIGQUIT</strong> to all workers. Optionally
-  an alternate <code>signal</code> such as <strong>SIGTERM</strong> may be sent to force
-  a hard restart.</p>
+<p>  Defaults to a graceful restart, spawning a new master process, and sending <strong>SIGQUIT</strong> to the previous master process. Alternatively a custom <code>signal</code> may be passed.</p>
 
 <h3 id="Master-kill-signal-">Master#kill([signal])</h3>
 
