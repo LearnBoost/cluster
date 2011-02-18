@@ -16,7 +16,7 @@ var server = http.createServer(function(req, res){
 cluster(server)
   .set('working directory', '/')
   .in('production').set('workers', 4)
-  .in('development').set('workers', 4)
+  .in('development').set('workers', 1)
   .in('production').use(cluster.logger())
   .in('production').use(cluster.pidfiles())
   .in('development').use(cluster.logger('logs', 'debug'))
