@@ -1,4 +1,28 @@
 
+0.1.0 / 2011-02-18 
+==================
+
+  * Added TCP echo server example
+  * Added REPL `shutdown()` function
+  * Added REPL `stop()` function
+  * Added master spawning strategy
+    On restart, master now spawns a new master to accept
+    connections while the previous works (and master) finish
+    and die off.
+  * Added `Master#in()` for environment based usage. Closes #22
+    For example:
+    cluster(server)
+      .in('development')
+        .use(cluster.debug())
+        .use(cluster.repl())
+        .listen(3000)
+      .in('production')
+        .use(cluster.logger())
+        .listen(80);
+
+  * Fixed some test race-conditions
+  * Fixed event leak. Closes #18
+
 0.0.4 / 2011-02-17 
 ==================
 
