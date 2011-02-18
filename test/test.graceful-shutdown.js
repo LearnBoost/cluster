@@ -12,7 +12,9 @@ var calls = 0;
 
 // child process
 
-var child = spawn('node', [__dirname + '/support/server.js']);
+var child = spawn('node', [__dirname + '/support/server.js'], {
+  customFds: [-1, -1, 2]
+});
 
 // listening
 

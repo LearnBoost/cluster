@@ -23,6 +23,7 @@ cluster.repl.define('echo', function(master, sock, msg){
 
 cluster(server)
   .set('workers', 4)
+  .set('socket path', '/tmp')
   .use(cluster.logger('logs'))
   .use(cluster.stats())
   .use(cluster.repl(8888))

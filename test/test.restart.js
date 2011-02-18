@@ -21,16 +21,34 @@ cluster = cluster(server)
   .use(cluster.pidfiles())
   .listen(3000);
 
+var a, b
+  , options = { host: 'localhost', port: 3000 };
+
 function getPID(name) {
   var pid = fs.readFileSync(__dirname + '/pids/' + name, 'ascii');
   return parseInt(pid, 10);
 }
 
-cluster.on('listening', function(){
-  fs.readdir(__dirname + '/pids', function(err, files){
-    var options = { host: 'localhost', port: 3000 }
-      , a = getPID('worker.0.pid')
-      , b = getPID('worker.1.pid');
+function movePID(name) {
+  var pid = getPID(name);
+  fs.writeFileSync(__dirname + '/pids/old.' + name, pid.toString(), 'ascii');
+}
+
+if (cluster.isChild) {
+  cluster.on('restart', function(){
+    http.get(options, function(res){
+      res.statusCode.should.equal(200);
+      var a = getPID('old.worker.0.pid')
+        , b = getPID('old.worker.1.pid'); 
+      a.should.not.equal(getPID('worker.0.pid'));
+      b.should.not.equal(getPID('worker.1.pid'));
+      cluster.close();
+    });
+  });
+} else {
+  cluster.on('listening', function(){
+    movePID('worker.0.pid')
+    movePID('worker.1.pid');
 
     // issue some requests
     var n = 20
@@ -38,18 +56,8 @@ cluster.on('listening', function(){
     while (n--) {
       http.get(options, function(res){
         res.statusCode.should.equal(200);
-        --pending || done();
-      });
-    }
-
-    function done() {
-      cluster.restart();
-      http.get(options, function(res){
-        res.statusCode.should.equal(200);
-        a.should.not.equal(getPID('worker.0.pid'));
-        b.should.not.equal(getPID('worker.1.pid'));
-        cluster.close();
+        --pending || cluster.restart();
       });
     }
   });
-});
+}

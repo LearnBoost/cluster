@@ -45,7 +45,7 @@
    - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
    - `working directory`  Working directory defaulting to `/`
    - `backlog`  Connection backlog, defaulting to 128
-   - `socket path`  Master socket path defaulting to `./master.sock`
+   - `socket path`  Master socket path defaulting to `./`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
    - `user`  User id / name
    - `group`  Group id / name
@@ -79,6 +79,14 @@
    - `worker killed`. When a worker has died
    - `kill`. When a `signal` is being sent to all workers
    - `restart`. Restart requested by REPL or signal
+
+### Master#state
+
+ Current state of the master process, one of:
+ 
+   - `active`
+   - `hard shutdown`
+   - `graceful shutdown`
 
 ### Master#isWorker
 
