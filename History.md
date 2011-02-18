@@ -11,14 +11,14 @@
     and die off.
   * Added `Master#in()` for environment based usage. Closes #22
     For example:
-    cluster(server)
-      .in('development')
-        .use(cluster.debug())
-        .use(cluster.repl())
-        .listen(3000)
-      .in('production')
-        .use(cluster.logger())
-        .listen(80);
+      cluster(server)
+        .in('development')
+          .use(cluster.debug())
+          .use(cluster.repl())
+          .listen(3000)
+        .in('production')
+          .use(cluster.logger())
+          .listen(80);
 
   * Fixed some test race-conditions
   * Fixed event leak. Closes #18
