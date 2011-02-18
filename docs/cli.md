@@ -31,6 +31,9 @@ provided by this plugin.
       worker 2 3284 alive
       worker 3 3285 alive
 
+      $ node server.js restart
+      $ node server.js shutdown
+
 For more command information use `--help`.
 
       $ node server.js --help
