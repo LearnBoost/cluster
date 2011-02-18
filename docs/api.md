@@ -120,6 +120,16 @@
 
   Register a `plugin` for use.
 
+### Master#in(env)
+
+ Conditionally perform the following action, if 
+ __NODE_ENV__ matches `env`.
+
+     cluster(server)
+       .in('development').use(cluster.debug())
+       .in('development').listen(3000)
+       .in('production').listen(80);
+
 ### Master#spawn(n)
 
   Spawn `n` additional workers.
