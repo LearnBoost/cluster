@@ -78,7 +78,11 @@
    - `close`. When master has completed shutting down
    - `worker killed`. When a worker has died
    - `kill`. When a `signal` is being sent to all workers
-   - `restart`. Restart requested by REPL or signal
+   - `restarting`. Restart requested by REPL or signal. Receives an object
+     which can be patched in order to preserve plugin state.
+   - `restart`. Restart complete, new master established, previous killed.
+     Receives an object with state preserved by the `restarting` even,
+     patched in the previous master.
 
 ### Master#state
 
