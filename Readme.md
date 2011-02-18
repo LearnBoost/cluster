@@ -48,6 +48,10 @@
         .use(cluster.repl(8888))
         .listen(3000);
 
+# Screencasts
+
+  - Cluster [Introduction](http://screenr.com/X8v)
+
 ## Running Tests
 
 First:
