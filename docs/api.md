@@ -144,7 +144,22 @@
          .use(cluster.logger())
          .use(cluster.pidfiles())
          .listen(80);
- 
+
+  If we perform the same action for environments, set them before
+  the first `in()` call, or use `in('all')`.
+
+    cluster(server)
+      .set('working directory', '/')
+      .in('development')
+        .set('workers', 1)
+        .use(cluster.logger('logs', 'debug'))
+        .use(cluster.debug())
+      .in('production')
+        .set('workers', 4)
+        .use(cluster.logger())
+        .use(cluster.pidfiles())
+      .in('all')
+        .listen(80);
 
 ### Master#spawn(n)
 
