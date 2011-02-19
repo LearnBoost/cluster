@@ -1,4 +1,15 @@
 
+0.1.1 / 2011-02-18 
+==================
+
+  * Added vhost example
+  * Added restarts stat
+  * Added `'all'` env support, `in('all')` executing regardless
+    of the environment. Useful when `listen()`ing on the same port
+    regardless.
+
+  * Changed; `working directory` setting defaulting to the script directory (POLS)
+
 0.1.0 / 2011-02-18 
 ==================
 
