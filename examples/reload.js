@@ -19,9 +19,6 @@ cluster(server)
   // lower worker count will reload faster,
   // however more will work just fine
   .set('workers', 1)
-  // be careful not to expose reload() to
-  // directories or files that cluster itself
-  // modifies, for example ./logs and ./pids
-  .use(cluster.reload('reload.js'))
+  .use(cluster.reload())
   .use(cluster.debug())
   .listen(3000);
