@@ -13,7 +13,7 @@
   - hard shutdown support
   - graceful shutdown support
   - resuscitates workers
-  - maintains worker count, even if worker was _KILL_ed.
+  - maintains worker count, even if worker was _SIGKILL_ed.
   - workers commit suicide when master dies 
   - spawns one worker per cpu (by default)
   - extensible via plugins
