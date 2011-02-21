@@ -26,6 +26,6 @@ cluster(server)
   .set('socket path', '/tmp')
   .use(cluster.logger('logs'))
   .use(cluster.stats())
-  .use(cluster.repl(8888))
+  .use(cluster.repl(8888, '127.0.0.1'))
   .use(cluster.debug())
   .listen(3000);
