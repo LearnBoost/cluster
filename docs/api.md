@@ -149,6 +149,9 @@
 
     cluster(server)
       .set('working directory', '/')
+      .do(function(){
+        console.log('some arbitrary action');
+      })
       .in('development')
         .set('workers', 1)
         .use(cluster.logger('logs', 'debug'))
