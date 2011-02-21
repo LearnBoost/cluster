@@ -21,7 +21,7 @@ cluster = cluster(server)
   .set('workers', 6)
   .use(cluster.pidfiles())
   .use(cluster.cli())
-  .use(cluster.logger())
+  .use(cluster.logger(__dirname + '/../logs'))
   .use(cluster.repl(8888, 'localhost'))
   .use(cluster.stats())
   .listen(3000);
