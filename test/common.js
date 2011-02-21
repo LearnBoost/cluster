@@ -11,7 +11,7 @@ var http = require('http')
 if (!http.get) {
   http.get = function(options, fn){
     var client = http.createClient(options.port, options.host)
-      , req = client.request('GET', options.path || '/');
+      , req = client.request('GET', options.path || '/', options.headers);
     req.on('response', fn).end();
     return req;
   };
