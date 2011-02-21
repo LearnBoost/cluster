@@ -1,4 +1,12 @@
 
+0.2.0 / 2011-02-21 
+==================
+
+  * Added; maintaining worker count on __SIGCHLD__. Closes #28
+  * Added; defaulting `reload()` to the servers root dir
+  * Changed; `reload()` filtering out non-js files. Closes #30
+  * Removed __SIGHUP__ trap from worker
+
 0.1.1 / 2011-02-18 
 ==================
 
