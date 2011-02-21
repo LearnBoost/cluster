@@ -19,10 +19,10 @@ var server = http.createServer(function(req, res){
 
 cluster = cluster(server)
   .set('workers', 6)
+  .use(cluster.pidfiles())
   .use(cluster.cli())
   .use(cluster.logger())
-  .use(cluster.pidfiles())
-  .use(cluster.repl())
+  .use(cluster.repl(8888, 'localhost'))
   .use(cluster.stats())
   .listen(3000);
 
