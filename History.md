@@ -1,4 +1,12 @@
 
+0.2.2 / 2011-02-21 
+==================
+
+  * Added __SIGCHLD__ trap to notify master of killed worker.
+    This means that master can now recover a child that
+    is __KILL__ed.
+  * Removed `Master#workerKilled()` call from worker
+
 0.2.1 / 2011-02-21 
 ==================
 
