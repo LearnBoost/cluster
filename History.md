@@ -1,4 +1,9 @@
 
+0.2.3 / 2011-02-21 
+==================
+
+  * Fixed `reload()` plugin; protect against cyclic restarts.
+
 0.2.2 / 2011-02-21 
 ==================
 
