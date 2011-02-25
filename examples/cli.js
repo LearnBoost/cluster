@@ -24,6 +24,6 @@ var server = http.createServer(function(req, res){
 
 cluster(server)
   .use(cluster.pidfiles())
-  .use(cluster.logger())
+  .use(cluster.debug())
   .use(cluster.cli())
   .listen(3000);
