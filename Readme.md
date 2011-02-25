@@ -66,7 +66,7 @@ Then:
 Actively tested with node:
 
   - 0.2.6
-  - 0.4.0
+  - 0.4.1
 
 ## Authors
 
