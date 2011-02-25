@@ -1,4 +1,16 @@
 
+0.2.4 / 2011-02-25 
+==================
+
+  * Added `Master#preventDefault` support to clean `cli()`.
+    Plugins can now tell master to "prevent its default behaviour", aka
+    listening for connections.
+
+  * Fixed bug preventing consistent envs. Closes #37 [reported by sambarnes]
+    This caused `require.paths` to be altered.
+
+  * Fixed; throw `pidfiles()` related errors, instead of ignoring
+
 0.2.3 / 2011-02-21 
 ==================
 
