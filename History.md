@@ -1,4 +1,15 @@
 
+0.3.0 / 2011-02-28 
+==================
+
+  * Added "worker exception" event. Closes #41
+  * Added `listen()` host dns resolution. Closes #35
+  * Added `pidfiles()` helper `master.pidof(name)`
+  * Added; `reload()` ignoring _node_modules_ and similar dirs. Closes #31
+  * Fixed master __PPID__ reference. Closes #38
+  * Fixed restart __SIGQUIT__ default
+  * Fixed; using `-g` for graceful shutdown instead of duplicate `-s`. Closes #39
+
 0.2.4 / 2011-02-25 
 ==================
 
