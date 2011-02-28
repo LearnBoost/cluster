@@ -16,7 +16,7 @@
 <p>Launch the <strong>REPL</strong> on port <em>8888</em>:</p>
 
 <pre><code>  cluster(server)
-    .use(cluster.repl(8888))
+    .use(cluster.repl(8888, '127.0.0.1'))
     .listen(3000);
 </code></pre>
 

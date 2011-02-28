@@ -43,7 +43,7 @@
  Below are the settings available:
  
    - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
-   - `working directory`  Working directory defaulting to `/`
+   - `working directory`  Working directory defaulting to the script's dir
    - `backlog`  Connection backlog, defaulting to 128
    - `socket path`  Master socket path defaulting to `./`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
@@ -65,7 +65,6 @@
    - `SIGTERM`  hard shutdown
    - `SIGQUIT`  graceful shutdown
    - `SIGUSR2`  restart workers
-   - `SIGHUP`   restart workers
 
 ### Events
 
@@ -77,6 +76,7 @@
    - `closing`. When master is gracefully shutting down
    - `close`. When master has completed shutting down
    - `worker killed`. When a worker has died
+   - `worker exception`. Worker uncaughtException. Receives the worker and exception object
    - `kill`. When a `signal` is being sent to all workers
    - `restarting`. Restart requested by REPL or signal. Receives an object
      which can be patched in order to preserve plugin state.
@@ -144,7 +144,25 @@
          .use(cluster.logger())
          .use(cluster.pidfiles())
          .listen(80);
- 
+
+  If we perform the same action for environments, set them before
+  the first `in()` call, or use `in('all')`.
+
+    cluster(server)
+      .set('working directory', '/')
+      .do(function(){
+        console.log('some arbitrary action');
+      })
+      .in('development')
+        .set('workers', 1)
+        .use(cluster.logger('logs', 'debug'))
+        .use(cluster.debug())
+      .in('production')
+        .set('workers', 4)
+        .use(cluster.logger())
+        .use(cluster.pidfiles())
+      .in('all')
+        .listen(80);
 
 ### Master#spawn(n)
 

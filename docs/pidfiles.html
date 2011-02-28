@@ -34,6 +34,21 @@
    .listen(3000);
 </code></pre>
 
+<h3 id="master-pidfiles">master.pidfiles</h3>
+
+<p>  The pidfiles directory.</p>
+
+<h3 id="master-pidof-name-">master.pidof(name)</h3>
+
+<p>  Return a <strong>PID</strong> for the given <code>name</code>.</p>
+
+<pre><code>  master.pidof('master')
+  // =&gt; 5978
+
+  master.pidof('worker.0')
+  // =&gt; 5979
+</code></pre>
+
 </div>
     </div>
   </body>

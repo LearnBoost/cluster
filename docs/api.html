@@ -53,7 +53,7 @@
 
 <ul>
 <li> <code>workers</code>  Number of workers to spawn, defaults to the number of CPUs or <code>1</code></li>
-<li> <code>working directory</code>  Working directory defaulting to <code>/</code></li>
+<li> <code>working directory</code>  Working directory defaulting to the script's dir</li>
 <li> <code>backlog</code>  Connection backlog, defaulting to 128</li>
 <li> <code>socket path</code>  Master socket path defaulting to <code>./</code></li>
 <li> <code>timeout</code> Worker shutdown timeout in milliseconds, defaulting to <code>60000</code></li>
@@ -79,7 +79,6 @@
 <li> <code>SIGTERM</code>  hard shutdown</li>
 <li> <code>SIGQUIT</code>  graceful shutdown</li>
 <li> <code>SIGUSR2</code>  restart workers</li>
-<li> <code>SIGHUP</code>   restart workers</li>
 </ul>
 
 
@@ -94,6 +93,7 @@
 <li> <code>closing</code>. When master is gracefully shutting down</li>
 <li> <code>close</code>. When master has completed shutting down</li>
 <li> <code>worker killed</code>. When a worker has died</li>
+<li> <code>worker exception</code>. Worker uncaughtException. Receives the worker and exception object</li>
 <li> <code>kill</code>. When a <code>signal</code> is being sent to all workers</li>
 <li> <code>restarting</code>. Restart requested by REPL or signal. Receives an object
  which can be patched in order to preserve plugin state.</li>
@@ -169,6 +169,26 @@
      .use(cluster.logger())
      .use(cluster.pidfiles())
      .listen(80);
+</code></pre>
+
+<p>  If we perform the same action for environments, set them before
+  the first <code>in()</code> call, or use <code>in('all')</code>.</p>
+
+<pre><code>cluster(server)
+  .set('working directory', '/')
+  .do(function(){
+    console.log('some arbitrary action');
+  })
+  .in('development')
+    .set('workers', 1)
+    .use(cluster.logger('logs', 'debug'))
+    .use(cluster.debug())
+  .in('production')
+    .set('workers', 4)
+    .use(cluster.logger())
+    .use(cluster.pidfiles())
+  .in('all')
+    .listen(80);
 </code></pre>
 
 <h3 id="Master-spawn-n-">Master#spawn(n)</h3>
