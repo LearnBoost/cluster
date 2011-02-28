@@ -76,6 +76,7 @@
    - `closing`. When master is gracefully shutting down
    - `close`. When master has completed shutting down
    - `worker killed`. When a worker has died
+   - `worker exception`. Worker uncaughtException. Receives the worker and exception object
    - `kill`. When a `signal` is being sent to all workers
    - `restarting`. Restart requested by REPL or signal. Receives an object
      which can be patched in order to preserve plugin state.
