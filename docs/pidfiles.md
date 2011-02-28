@@ -24,3 +24,18 @@ save to `/var/run/node`:
      cluster(server)
        .use(cluster.logger('/var/run/node'))
        .listen(3000);
+
+### master.pidfiles
+
+  The pidfiles directory.
+
+### master.pidof(name)
+
+  Return a __PID__ for the given `name`.
+
+      master.pidof('master')
+      // => 5978
+
+      master.pidof('worker.0')
+      // => 5979
+      
