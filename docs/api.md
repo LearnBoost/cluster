@@ -2,7 +2,7 @@
 ## API
 
  The Cluster API at its core is extremely simple, all we need to do is pass
- our http `server` to `cluster()`, then call `listen()` as we would on the `http.Server` itself.
+ our tcp or http `server` to `cluster()`, then call `listen()` as we would on the `http.Server` itself.
 
 
      var cluster = require('../')
@@ -15,6 +15,19 @@
 
      cluster(server)
        .listen(3000);
+
+ Alternatively (and recommended) is to export your server instance via `module.exports`, and supply a path to `cluster()`. For example _app.js_:
+ 
+     module.exports = http.createServer(....);
+
+ and _server.js_ with our cluster logic, allowing our server to be `require()`ed within tests, and preventing potential issues by having open database connections etc within the master processes, as only the workers need access to the `server` instance.
+
+    cluster('app')
+      .listen(3000);
+
+ A good example if this, is a long-lived database connection. Our _app.js_ may have this initialized at the top, which although will work fine stand-alone, may cause cluster's master processes to hang when restarting or closing due to the connection remaining active in the event loop.
+ 
+     var db = redis.createClient();
 
 ### Plugins
 
