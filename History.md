@@ -1,4 +1,11 @@
 
+0.3.1 / 2011-02-28 
+==================
+
+  * Added `cluster(filename)` support. Closes #45
+    This is highly recommended, view the API docs
+    on the site for more info.
+
 0.3.0 / 2011-02-28 
 ==================
 
