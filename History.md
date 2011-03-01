@@ -1,4 +1,9 @@
 
+0.3.2 / 2011-03-01 
+==================
+
+  * Fixed bug when using `cluster(filename)`, previously still requiring for master
+
 0.3.1 / 2011-02-28 
 ==================
 
