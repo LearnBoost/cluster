@@ -10,6 +10,7 @@ require('./common');
 
 
 cluster = cluster('support/exported')
+  .set('workers', 4)
   .listen(3000);
 
 cluster.on('listening', function(){
