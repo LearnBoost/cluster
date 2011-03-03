@@ -1,4 +1,9 @@
 
+0.3.3 / 2011-03-03 
+==================
+
+  * Added __CLUSTER_WORKER___ env var with the workers id
+
 0.3.2 / 2011-03-01 
 ==================
 
