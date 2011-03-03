@@ -115,6 +115,9 @@
         // do something
       }
 
+  Alternatively we can use the __CLUSTER_WORKER__ env var, populated with
+  the worker's id.
+
 ### Master#isMaster
 
 `true` when the script is executed as master.

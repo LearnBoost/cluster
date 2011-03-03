@@ -4,6 +4,7 @@
  */
 
 var cluster = require('../')
+  , assert = require('assert')
   , http = require('http');
 
 require('./common');
@@ -18,8 +19,10 @@ cluster = cluster(server)
 
 if (cluster.isMaster) {
   process.env.FOO = 'bar';
+  assert.ok(!process.env.CLUSTER_WORKER);
 } else {
   process.env.FOO.should.equal('bar');
+  assert.ok(process.env.CLUSTER_WORKER);
 }
 
 cluster.on('listening', function(){
