@@ -1,4 +1,11 @@
 
+0.4.0 / 2011-03-08 
+==================
+
+  * Added `worker removed` event
+  * Added `spawn(-n, signal)` support defaulting to __SIGQUIT__
+  * Added `spawn(-n)` support. Closes #46
+
 0.3.3 / 2011-03-03 
 ==================
 
