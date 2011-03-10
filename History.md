@@ -1,4 +1,10 @@
 
+0.4.1 / 2011-03-10 
+==================
+
+  * Added cyclic restart timeouts. Closes #23
+  * Remove master __SIGHUP__ as restart
+
 0.4.0 / 2011-03-08 
 ==================
 
