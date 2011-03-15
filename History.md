@@ -1,4 +1,11 @@
 
+0.4.2 / 2011-03-15 
+==================
+
+  * Fixed `user` / `group` options. Closes #60
+  * Fixed; abort on many immediate worker deaths within boot
+  * Fixed `cli()` exit when working with `reload()` (or anything else keeping the event loop active)
+
 0.4.1 / 2011-03-10 
 ==================
 
