@@ -25,7 +25,7 @@ cluster(server)
   .set('workers', 4)
   .set('socket path', '/tmp')
   .use(cluster.logger('logs'))
-  .use(cluster.stats())
+  .use(cluster.stats({ connections: true }))
   .use(cluster.repl(8888, '127.0.0.1'))
   .use(cluster.debug())
   .listen(3000);
