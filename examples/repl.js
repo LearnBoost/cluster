@@ -20,7 +20,6 @@ cluster.repl.define('echo', function(master, sock, msg){
 }, 'echo the given message');
 
 // $ telnet localhots 8888
-
 cluster(server)
   .set('workers', 4)
   .set('socket path', '/tmp')
