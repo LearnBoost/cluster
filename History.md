@@ -1,4 +1,14 @@
 
+0.5.0 / 2011-03-24 
+==================
+
+  * Added `connections` option to `stats()` plugin.
+    Reports connections and disconnections, displaying in the REPL.
+  * Added `requests` option to `stats()` plugin.
+    Reports request statistics, displaying in the REPL.
+  * Added support for plugins to work within workers. Closes #27
+  * Fixed json framing race-condition. Closes #64
+
 0.4.2 / 2011-03-15 
 ==================
 
