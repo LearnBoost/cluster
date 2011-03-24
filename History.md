@@ -1,4 +1,9 @@
 
+0.5.1 / 2011-03-24 
+==================
+
+  * Changed; only caught uncaughtExceptions when no other listeners are present
+
 0.5.0 / 2011-03-24 
 ==================
 
