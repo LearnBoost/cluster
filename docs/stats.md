@@ -38,8 +38,39 @@ Telnet to the repl:
       memory now (free / total): 2.08gb / 4.00gb
 
       Workers
-      uptime #0: 2 minutes
-      uptime #1: 2 minutes
-      uptime #2: 1 minute
-      uptime #3: 22 seconds
+      0: 2 minutes
+      1: 2 minutes
+      2: 1 minute
+      3: 22 seconds
 
+### Options
+
+  - `connections`  enable connection statistics
+  - `requests`     enable request statistics
+
+### Connection Statistics
+
+  Cluster can report on connections made to the server in each worker. To utilize simply pass `{ connections: true }`, and then view the stats in the REPL. You will now see the total number of connections made, and the total active connections, along with a break-down of connections per-worker, leading the pipe is the active, trailing the pipe is the total number of connections.
+  
+      Workers
+      connections total: 60
+      connections active: 0
+      0: 15 seconds 0|4
+      1: 15 seconds 0|1
+      2: 15 seconds 0|25
+      3: 15 seconds 0|30
+
+### Request Statistics
+
+  Cluster supports reporting on requests as well, currently only tallying up the total number, however is capable of much more. The REPL `stats()` output below is the result of passing `.use(cluster.stats({ connections: true, requests: true }))`.
+  
+  
+      Workers
+      connections total: 60
+      connections active: 0
+      requests total: 24064
+      0: 15 seconds 0|4|3358
+      1: 15 seconds 0|1|1126
+      2: 15 seconds 0|25|9613
+      3: 15 seconds 0|30|9967
+  
