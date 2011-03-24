@@ -81,7 +81,3 @@ Telnet to the repl:
   - `client connection`, worker
   - `client disconnection`, worker
   - `client request`, worker, request
-
-### Screenshots
-
-  ![Cluster REPL Statistics](http://cl.ly/5Tlh)

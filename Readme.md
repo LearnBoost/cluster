@@ -71,10 +71,6 @@ recommended usage: passing the path to prevent unnecessary database connections 
 
   - Cluster [Introduction](http://screenr.com/X8v)
 
-# Screenshots
-
-  ![Cluster REPL Statistics](http://cl.ly/5Tlh)
-
 ## Running Tests
 
 First:
