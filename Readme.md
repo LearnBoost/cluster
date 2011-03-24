@@ -67,9 +67,13 @@ recommended usage: passing the path to prevent unnecessary database connections 
         .use(cluster.repl(8888))
         .listen(3000);
 
-# Screencasts
+## Screencasts
 
   - Cluster [Introduction](http://screenr.com/X8v)
+
+# Screenshots
+
+  ![Cluster REPL Statistics](http://cl.ly/3p2n2u2X0W34141f2z0B)
 
 ## Running Tests
 

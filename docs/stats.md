@@ -73,4 +73,15 @@ Telnet to the repl:
       1: 15 seconds 0|1|1126
       2: 15 seconds 0|25|9613
       3: 15 seconds 0|30|9967
-  
+
+### Events
+
+  When the options shown above are used, events are also emitted, so even if you do not plan on using the REPL, these events may be helpful to other plugins.
+
+  - `client connection`, worker
+  - `client disconnection`, worker
+  - `client request`, worker, request
+
+### Screenshots
+
+  ![Cluster REPL Statistics](http://cl.ly/3p2n2u2X0W34141f2z0B)
