@@ -73,7 +73,7 @@ recommended usage: passing the path to prevent unnecessary database connections 
 
 # Screenshots
 
-  ![Cluster REPL Statistics](http://cl.ly/3p2n2u2X0W34141f2z0B)
+  ![Cluster REPL Statistics](http://cl.ly/5Tlh)
 
 ## Running Tests
 
