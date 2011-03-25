@@ -11,7 +11,7 @@ cluster('app.js')
   .set('workers', 4)
   .set('socket path', '/tmp')
   .use(cluster.logger('logs'))
-  //.use(cluster.stats({ connections: true, requests: true }))
+  .use(cluster.stats({ connections: true, requests: true }))
   .use(cluster.repl(8888, '127.0.0.1'))
   .use(cluster.debug())
   .listen(3000);
