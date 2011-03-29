@@ -37,3 +37,11 @@
        cluster(server)
         .use(cluster.reload('lib', { signal: 'SIGQUIT' }))
         .listen(3000);
+
+ By default the plugin watches only for changes in files with a `.js` file extension. This can be changed by modifying the `watchedFileExtensions` array before instantiating the plugin. The following reloads when `.js` and `.coffee` files change.
+
+       cluster.reload.watchedFileExtensions.push('.coffee');
+
+       cluster(server)
+        .use(cluster.reload())
+        .listen(3000);
