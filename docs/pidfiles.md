@@ -22,7 +22,7 @@ save to `./pids`:
 save to `/var/run/node`:
 
      cluster(server)
-       .use(cluster.logger('/var/run/node'))
+       .use(cluster.pidfiles('/var/run/node'))
        .listen(3000);
 
 ### master.pidfiles
