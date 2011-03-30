@@ -1,4 +1,3 @@
-
 ## Reload
 
   Restart the server the given js `files` have changed.
@@ -37,3 +36,9 @@
        cluster(server)
         .use(cluster.reload('lib', { signal: 'SIGQUIT' }))
         .listen(3000);
+
+ Watching coffee-script files as well.
+
+       cluster(server)
+         .use(cluster.reload('lib', { extensions: ['.js', '.coffee'] }))
+         .listen(3000);
