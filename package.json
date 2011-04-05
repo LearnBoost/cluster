@@ -2,7 +2,7 @@
   "name": "cluster",
   "description": "extensible multi-core server manager",
   "keywords": ["server", "spark", "fugue", "tcp", "workers"],
-  "version": "0.5.1",
+  "version": "0.5.3",
   "homepage": "http://learnboost.github.com/cluster",
   "repository": "git://github.com/LearnBoost/cluster.git",
   "author": "TJ Holowaychuk <tj@learnboost.com> (http://tjholowaychuk.com)",

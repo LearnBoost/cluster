@@ -1,4 +1,10 @@
 
+0.5.3 / 2011-03-30 
+==================
+
+  * Added support for changing watched file extensions [Eiríkur Nilsson]
+  * Fixed; reload() using extname() instead of indexOf() [reported by solsys]
+
 0.5.1 / 2011-03-24 
 ==================
 
