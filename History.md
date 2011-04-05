@@ -1,4 +1,11 @@
 
+0.5.4 / 2011-04-05 
+==================
+
+  * Added `title` and `worker title` settings. Closes #54
+  * Added `request complete` `stats()` event
+  * Changed; demote user/group in master
+
 0.5.3 / 2011-03-30 
 ==================
 
