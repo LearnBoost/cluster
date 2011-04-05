@@ -24,5 +24,5 @@ cluster.repl.define('echo', function(master, sock, msg){
 cluster(server)
   .set('workers', 1)
   .use(cluster.logger())
-  .use(cluster.repl(__dirname + '/repl'))
+  .use(cluster.repl('/tmp/repl'))
   .listen(3000);

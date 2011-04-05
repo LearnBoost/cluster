@@ -1,4 +1,44 @@
 
+0.5.1 / 2011-03-24 
+==================
+
+  * Changed; only caught uncaughtExceptions when no other listeners are present
+
+0.5.0 / 2011-03-24 
+==================
+
+  * Added `connections` option to `stats()` plugin.
+    Reports connections and disconnections, displaying in the REPL.
+  * Added `requests` option to `stats()` plugin.
+    Reports request statistics, displaying in the REPL.
+  * Added support for plugins to work within workers. Closes #27
+  * Fixed json framing race-condition. Closes #64
+
+0.4.2 / 2011-03-15 
+==================
+
+  * Fixed `user` / `group` options. Closes #60
+  * Fixed; abort on many immediate worker deaths within boot
+  * Fixed `cli()` exit when working with `reload()` (or anything else keeping the event loop active)
+
+0.4.1 / 2011-03-10 
+==================
+
+  * Added cyclic restart timeouts. Closes #23
+  * Remove master __SIGHUP__ as restart
+
+0.4.0 / 2011-03-08 
+==================
+
+  * Added `worker removed` event
+  * Added `spawn(-n, signal)` support defaulting to __SIGQUIT__
+  * Added `spawn(-n)` support. Closes #46
+
+0.3.3 / 2011-03-03 
+==================
+
+  * Added __CLUSTER_WORKER___ env var with the workers id
+
 0.3.2 / 2011-03-01 
 ==================
 
