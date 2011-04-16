@@ -1,4 +1,10 @@
 
+0.5.6 / 2011-04-15 
+==================
+
+  * Added; expose utils, helpful for plugins
+  * Added; default both `Master#spawn()` and `Master#remove()` to 1
+
 0.5.5 / 2011-04-05 
 ==================
 
