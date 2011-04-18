@@ -5,7 +5,7 @@ HTML = $(DOCS:.md=.html)
 all: $(HTML)
 
 %.html: %.md
-	ronn --html --fragment < $< \
+	markdown < $< \
 	| cat head.html - tail.html \
 	> $@
 

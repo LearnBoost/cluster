@@ -4,12 +4,11 @@
     <link rel='stylesheet' href='../main.css' />
   </head>
   <body class="subpage">
-    <div id="content"><div class='mp'>
-<h2 id="CLI">CLI</h2>
+    <div id="content"><h2>CLI</h2>
 
 <p> Adds a command-line interface to your cluster.</p>
 
-<h3 id="Usage">Usage</h3>
+<h3>Usage</h3>
 
 <p>This plugin requires that you use <code>pidfiles()</code>
 above <code>cli()</code>, so that the pidfile directory
@@ -48,7 +47,7 @@ provided by this plugin.</p>
 <pre><code>  $ node server.js --help
 </code></pre>
 
-<h3 id="Defining-CLI-Commands">Defining CLI Commands</h3>
+<h3>Defining CLI Commands</h3>
 
 <p> Plugins may define additional commands, simply by invoking <code>cluster.cli.define()</code> passing the flag(s), a callback function,
  and a description. Below is the implementation of <code>--help</code> for reference:</p>
@@ -56,7 +55,7 @@ provided by this plugin.</p>
 <pre><code>  var cli = require('cluster').cli;
 
   cli.define('-h, --help, help', function(master){
-    console.log('\n  Usage: node &lt;file> &lt;command>\n');
+    console.log('\n  Usage: node &lt;file&gt; &lt;command&gt;\n');
     commands.forEach(function(command){
       console.log('    '
         + command.flags.join(', ')
@@ -68,8 +67,6 @@ provided by this plugin.</p>
     process.exit();
   }, 'Show help information');
 </code></pre>
-
-</div>
     </div>
   </body>
 </html>

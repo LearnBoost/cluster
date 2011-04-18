@@ -60,6 +60,8 @@
    - `backlog`  Connection backlog, defaulting to 128
    - `socket path`  Master socket path defaulting to `./`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
+   - `title` master process title defaulting to "cluster master"
+   - `worker title` worker process title defaulting to "cluster worker {n}"
    - `user`  User id / name
    - `group`  Group id / name
 
@@ -114,6 +116,9 @@
       if (cluster.isWorker) {
         // do something
       }
+
+  Alternatively we can use the __CLUSTER_WORKER__ env var, populated with
+  the worker's id.
 
 ### Master#isMaster
 

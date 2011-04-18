@@ -4,8 +4,7 @@
     <link rel='stylesheet' href='../main.css' />
   </head>
   <body class="subpage">
-    <div id="content"><div class='mp'>
-<h2 id="PID-Files">PID Files</h2>
+    <div id="content"><h2>PID Files</h2>
 
 <p> Saves out PID files, for example:</p>
 
@@ -16,7 +15,7 @@
    worker.3.pid
 </code></pre>
 
-<h3 id="Usage">Usage</h3>
+<h3>Usage</h3>
 
 <p>The <code>pidfiles([path])</code> plugin saves pid (process-id) files to the given <code>path</code> or <code>./pids</code>.</p>
 
@@ -30,15 +29,15 @@
 <p>save to <code>/var/run/node</code>:</p>
 
 <pre><code> cluster(server)
-   .use(cluster.logger('/var/run/node'))
+   .use(cluster.pidfiles('/var/run/node'))
    .listen(3000);
 </code></pre>
 
-<h3 id="master-pidfiles">master.pidfiles</h3>
+<h3>master.pidfiles</h3>
 
 <p>  The pidfiles directory.</p>
 
-<h3 id="master-pidof-name-">master.pidof(name)</h3>
+<h3>master.pidof(name)</h3>
 
 <p>  Return a <strong>PID</strong> for the given <code>name</code>.</p>
 
@@ -48,8 +47,6 @@
   master.pidof('worker.0')
   // =&gt; 5979
 </code></pre>
-
-</div>
     </div>
   </body>
 </html>

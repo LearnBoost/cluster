@@ -4,25 +4,24 @@
     <link rel='stylesheet' href='../main.css' />
   </head>
   <body class="subpage">
-    <div id="content"><div class='mp'>
-<h2 id="REPL">REPL</h2>
+    <div id="content"><h2>REPL</h2>
 
 <p> Provides live administration tools for inspecting state, spawning and killing workers, and more. The <strong>REPL</strong> plugin itself is extensible, for example the <code>stats()</code> plugin provides a <strong>REPL</strong> function named <code>stats()</code>.</p>
 
-<h3 id="Usage">Usage</h3>
+<h3>Usage</h3>
 
 <p> The <code>repl([port | path])</code> accepts a <code>port</code> or unix domain socket <code>path</code>, after which you may telnet to at any time.</p>
 
-<p>Launch the <strong>REPL</strong> on port <em>8888</em>:</p>
+<p>Launch the <strong>REPL</strong> with a local socket:</p>
 
 <pre><code>  cluster(server)
-    .use(cluster.repl(8888, '127.0.0.1'))
+    .use(cluster.repl('/var/run/cluster.sock'))
     .listen(3000);
 </code></pre>
 
 <p>Start a telnet session:</p>
 
-<pre><code>$ telnet localhost 8888
+<pre><code>$ telnet /var/run/cluster.sock
 
 cluster&gt; help()
 
@@ -38,7 +37,9 @@ cluster&gt; help()
   stats(): Display server statistics
 </code></pre>
 
-<h3 id="pids-">pids()</h3>
+<p><strong>NOTE</strong>: a local socket is recommended, otherwise this may be a secure hole.</p>
+
+<h3>pids()</h3>
 
 <p> Outputs the master / worker process ids.</p>
 
@@ -52,7 +53,7 @@ cluster&gt; help()
   worker #3: 1804
 </code></pre>
 
-<h3 id="spawn-">spawn()</h3>
+<h3>spawn()</h3>
 
 <p> Spawn an additional worker.</p>
 
@@ -69,7 +70,7 @@ cluster&gt; pids()
   worker #4: 1809
 </code></pre>
 
-<h3 id="spawn-n-">spawn(n)</h3>
+<h3>spawn(n)</h3>
 
 <p> Spawn <code>n</code> workers:</p>
 
@@ -89,7 +90,7 @@ cluster&gt; pids()
    worker #7: 1828
 </code></pre>
 
-<h3 id="kill-id-signal-">kill(id[, signal])</h3>
+<h3>kill(id[, signal])</h3>
 
 <p>Kill worker <code>id</code> with the given <code>signal</code> or <strong>SIGTERM</strong>. For graceful termination use <strong>SIGQUIT</strong>.</p>
 
@@ -116,7 +117,7 @@ cluster&gt; pids()
   worker #3: 1844
 </code></pre>
 
-<h3 id="restart-">restart()</h3>
+<h3>restart()</h3>
 
 <p> Gracefully restart all workers.</p>
 
@@ -141,7 +142,7 @@ cluster&gt; pids()
    worker #3: 1847
 </code></pre>
 
-<h3 id="Defining-REPL-Functions">Defining REPL Functions</h3>
+<h3>Defining REPL Functions</h3>
 
 <p> To define a function accessible to the <strong>REPL</strong>, all we need to do is call <code>cluster.repl.define()</code>, passing the function, as well as a description string.</p>
 
@@ -176,8 +177,6 @@ cluster&gt; pids()
     .use(repl(8888))
     .listen(3000);
 </code></pre>
-
-</div>
     </div>
   </body>
 </html>

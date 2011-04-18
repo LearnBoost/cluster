@@ -7,15 +7,15 @@
 
  The `repl([port | path])` accepts a `port` or unix domain socket `path`, after which you may telnet to at any time.
 
-Launch the __REPL__ on port _8888_:
+Launch the __REPL__ with a local socket:
  
       cluster(server)
-        .use(cluster.repl(8888, '127.0.0.1'))
+        .use(cluster.repl('/var/run/cluster.sock'))
         .listen(3000);
 
 Start a telnet session:
 
-    $ telnet localhost 8888
+    $ telnet /var/run/cluster.sock
 
     cluster> help()
 
@@ -30,6 +30,7 @@ Start a telnet session:
       echo(msg): echo the given message
       stats(): Display server statistics
 
+__NOTE__: a local socket is recommended, otherwise this may be a secure hole.
 
 ### pids()
 
