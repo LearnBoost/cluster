@@ -60,8 +60,8 @@
    - `backlog`  Connection backlog, defaulting to 128
    - `socket path`  Master socket path defaulting to `./`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
-   - `title` master process title defaulting to "cluster master"
-   - `worker title` worker process title defaulting to "cluster worker {n}"
+   - `title` master process title defaulting to "cluster"
+   - `worker title` worker process title defaulting to "cluster worker"
    - `user`  User id / name
    - `group`  Group id / name
 
