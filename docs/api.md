@@ -88,7 +88,7 @@
    - `start`. When the server is starting (pre-spawn)
    - `worker`. When a worker is spawned, passing the `worker`
    - `listening`. When the server is listening for connections (post-spawn)
-   - `closing`. When master is gracefully shutting down
+   - `closing`. When master is shutting down
    - `close`. When master has completed shutting down
    - `worker killed`. When a worker has died
    - `worker exception`. Worker uncaughtException. Receives the worker and exception object
