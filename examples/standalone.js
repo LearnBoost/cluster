@@ -11,8 +11,9 @@ var proc = cluster()
   .start();
 
 if (proc.isWorker) {
-  console.log('  worker #%d started', process.env.CLUSTER_WORKER);
+  var id = process.env.CLUSTER_WORKER;
+  console.log('  worker #%d started', id);
   setInterval(function(){
-    console.log('  processing job from worker #%d', process.env.CLUSTER_WORKER);
+    console.log('  processing job from worker #%d', id);
   }, 1000);
 }
