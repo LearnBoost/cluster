@@ -29,6 +29,20 @@
  
      var db = redis.createClient();
 
+### Abstract Clusters
+
+ Cluster is not bound to servers, cluster can be used to manage processes for processing job queues etc. Below is a minimalist example of this, simply invokes `cluster()` with no object, spawning a worker per cpu:
+ 
+      var cluster = require('cluster');
+
+      var proc = cluster().start();
+
+      if (proc.isWorker) {
+        // do things within the worker processes
+      } else {
+        // do something within the master
+      }
+
 ### Plugins
 
  A plugin simple a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
