@@ -1,4 +1,10 @@
 
+0.6.0 / 2011-04-18 
+==================
+
+  * Added support to run cluster without a server. Closes #72
+  * Renamed titles to "cluster" and "cluster worker". closes #82
+
 0.5.7 / 2011-04-17 
 ==================
 
