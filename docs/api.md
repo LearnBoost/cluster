@@ -99,9 +99,9 @@
 
  The following events are emitted, useful for plugins or general purpose logging etc.
  
-   - `start`. When the server is starting (pre-spawn)
+   - `start`. When the IPC server is prepped
    - `worker`. When a worker is spawned, passing the `worker`
-   - `listening`. When the server is listening for connections (post-spawn)
+   - `listening`. When the server is listening for connections
    - `closing`. When master is shutting down
    - `close`. When master has completed shutting down
    - `worker killed`. When a worker has died
