@@ -19,10 +19,10 @@ var server = http.createServer(function(req, res){
 cluster = cluster(server)
   .set('workers', 2)
   .use(cluster.pidfiles())
-  .listen(3000);
+  .listen(3002);
 
 var a, b
-  , options = { host: 'localhost', port: 3000 };
+  , options = { host: 'localhost', port: 3002 };
 
 function getPID(name) {
   var pid = fs.readFileSync(__dirname + '/pids/' + name, 'ascii');

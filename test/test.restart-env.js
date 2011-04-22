@@ -15,7 +15,7 @@ var server = http.createServer(function(req, res){
 });
 
 cluster = cluster(server)
-  .listen(3000);
+  .listen(3001);
 
 if (cluster.isChild) {
   process.cwd().should.include.string('cluster/test');
