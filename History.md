@@ -1,4 +1,12 @@
 
+0.6.1 / 2011-04-26 
+==================
+
+  * Changed; cli commands will now signal orphaned children
+  * Changed; postpone spawning until "listening" this _should_ fix our EINVAL issue
+  * Changed; exit > 0 when trying to use the `cli()` when cluster is not running
+  * Changed; `cli()` will still operate on orphans
+
 0.6.0 / 2011-04-18 
 ==================
 
