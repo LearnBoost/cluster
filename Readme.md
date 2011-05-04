@@ -81,9 +81,9 @@ recommended usage: passing the path to prevent unnecessary database connections 
 
 ## Running Tests
 
-First:
+Install development dependencies:
 
-     $ git submodule update --init
+     $ npm install
 
 Then:
 
