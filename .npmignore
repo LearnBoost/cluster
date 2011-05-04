@@ -4,3 +4,4 @@ examples
 *.sock
 *.pid
 *.log
+node_modules
