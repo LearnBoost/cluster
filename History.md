@@ -1,4 +1,10 @@
 
+0.6.2 / 2011-05-11 
+==================
+
+  * Fixed IPC for workers without a server. Closes #91
+  * Fixed `close(fd)` issue for Master without a server. Closes #89
+
 0.6.1 / 2011-04-26 
 ==================
 
