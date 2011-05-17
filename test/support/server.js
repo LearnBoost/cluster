@@ -4,7 +4,7 @@
  */
 
 var cluster = require('../../')
-  , should = require('../../support/should')
+  , should = require('should')
   , http = require('http')
   , fs = require('fs');
 
