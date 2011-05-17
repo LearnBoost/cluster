@@ -4,7 +4,7 @@
  */
 
 var http = require('http')
-  , should = require('../support/should');
+  , should = require('should');
 
 // COMPAT:
 
