@@ -25,3 +25,7 @@ Outputs verbose debugging information to _stderr_.
      cluster(server)
        .use(cluster.debug())
        .listen(3000);
+
+### Options
+
+  - `color`  enable color output, defaults to true
