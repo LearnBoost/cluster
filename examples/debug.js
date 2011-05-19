@@ -16,5 +16,5 @@ var server = http.createServer(function(req, res){
 cluster(server)
   .set('workers', 4)
   .use(cluster.logger('logs', 'debug'))
-  .use(cluster.debug({ colors: false }))
+  .use(cluster.debug())
   .listen(3000);

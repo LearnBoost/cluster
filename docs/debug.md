@@ -28,4 +28,4 @@ Outputs verbose debugging information to _stderr_.
 
 ### Options
 
-  - `color`  enable color output, defaults to true
+  - `colors`  enable color output, defaults to true
