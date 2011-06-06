@@ -1,11 +1,10 @@
-
 /**
  * Module dependencies.
  */
 
 var cluster = require('../');
 
-// $ telnet localhots 8888
+// $ telnet localhost 8888
 
 cluster('app.js')
   .set('workers', 4)
