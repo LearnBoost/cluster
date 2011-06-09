@@ -71,7 +71,7 @@ recommended usage: passing the path to prevent unnecessary database connections 
 
  Below are the known 3rd-party plugins for cluster:
  
-   - [cluster-log](https://github.com/LearnBoost/cluster-log) remove logger powered by redis
+   - [cluster-log](https://github.com/LearnBoost/cluster-log) remote logger powered by redis
    - [cluster-mail](https://github.com/LearnBoost/cluster-mail) email exception notifications
    - [cluster-exception](https://github.com/3rd-eden/cluster.exception) extensive exception notifications
 
