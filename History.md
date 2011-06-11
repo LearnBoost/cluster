@@ -1,4 +1,11 @@
 
+0.6.3 / 2011-06-11 
+==================
+
+  * Added `{ color: false }` option to `debug()`
+  * Fixed; close socketpair fds when worker dies
+  * Fixed `Master#listen()` with env specific config. Closes #98
+
 0.6.2 / 2011-05-11 
 ==================
 
