@@ -25,5 +25,6 @@ if (cluster.isWorker) {
       err = e;
     }
     if (!err) throw new Error('parent is running');
+    if ('ESRCH' != err.code) throw err;
   }
 }
