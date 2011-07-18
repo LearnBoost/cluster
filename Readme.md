@@ -103,8 +103,7 @@ $ make test
 
 Actively tested with node:
 
-  - 0.2.6
-  - 0.4.2
+  - 0.4.9
 
 ## Authors
 
