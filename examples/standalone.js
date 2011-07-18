@@ -15,7 +15,7 @@ if (proc.isWorker) {
   console.log('  worker #%d started', id);
   setInterval(function(){
     console.log('  processing job from worker #%d', id);
-  }, 1000);
+  }, 3000);
 } else {
   setTimeout(function(){
     proc.close();
