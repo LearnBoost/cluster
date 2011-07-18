@@ -1,4 +1,14 @@
 
+0.6.6 / 2011-07-18 
+==================
+
+  * Added stand-alone restart test
+  * Added stand-alone shutdown test
+  * Added simple stand-alone test
+  * Removed 0.2.x compatibility
+  * Changed: sync unlink of server / client sockets
+  * Fixed stand-alone issue with not killing the parent master. Closes #565
+
 0.6.5 / 2011-07-18 
 ==================
 
