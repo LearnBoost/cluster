@@ -1,4 +1,11 @@
 
+0.6.5 / 2011-07-18 
+==================
+
+  * Added support for calling any master method from a worker [felixge]
+  * Changed internal IPC to use UDP. Closes #126
+  * Fixed: __SIGKILL__ children on master uncaught exception
+
 0.6.4 / 2011-06-14 
 ==================
 
