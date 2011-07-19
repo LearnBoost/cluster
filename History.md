@@ -1,4 +1,11 @@
 
+0.6.7 / 2011-07-19 
+==================
+
+  * Added test case for #125 [felixge]
+  * Expose child `Worker` instance `.worker`
+  * Fixed restart race-condition. Closes #125
+
 0.6.6 / 2011-07-18 
 ==================
 
