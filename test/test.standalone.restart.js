@@ -14,18 +14,11 @@ cluster = cluster()
   .use(cluster.debug())
   .start();
 
-if (!cluster.isMaster) {
-  return;
-}
+if (!cluster.isMaster) return;
+var ppid = process.env.CLUSTER_PARENT_PID;
 
-var parentId = process.env.CLUSTER_PARENT_PID;
-
-cluster.on('listening', function() {
-  if (parentId) {
-    cluster.close();
-    return;
-  }
-
+cluster.on('listening', function(){
+  if (ppid) return cluster.close();
   cluster.restart();
   setTimeout(function() {
     throw new Error('Initial master process has turned into a zombie!');
