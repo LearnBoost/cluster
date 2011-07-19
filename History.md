@@ -1,4 +1,9 @@
 
+0.6.8 / 2011-07-19 
+==================
+
+  * Removed unnecessary use of client socket causing `bind()` errors
+
 0.6.7 / 2011-07-19 
 ==================
 
