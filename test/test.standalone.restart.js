@@ -11,7 +11,6 @@ var assert = require('assert');
 cluster = cluster()
   .set('workers', 2)
   .set('restart threshold', 0)
-  .use(cluster.debug())
   .start();
 
 if (!cluster.isMaster) return;
