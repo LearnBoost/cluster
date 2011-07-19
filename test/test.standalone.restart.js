@@ -21,6 +21,6 @@ cluster.on('listening', function(){
   if (ppid) return cluster.close();
   cluster.restart();
   setTimeout(function() {
-    throw new Error('Initial master process has turned into a zombie!');
+    throw new Error('Failed to kill parent master');
   }, 3000);
 });
