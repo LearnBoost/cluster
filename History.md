@@ -1,4 +1,9 @@
 
+0.6.9 / 2011-07-20 
+==================
+
+  * Fixed typo in `reload()` plugin causing the `signal` option to fail. Closes #131
+
 0.6.8 / 2011-07-19 
 ==================
 
