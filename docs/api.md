@@ -73,6 +73,7 @@
    - `working directory`  Working directory defaulting to the script's dir
    - `backlog`  Connection backlog, defaulting to 128
    - `socket path`  Master socket path defaulting to `./`
+   - `socket filename`  Master socket's filename defaulting to `cluster.{PID}.server.sock`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
    - `title` master process title defaulting to "cluster"
    - `worker title` worker process title defaulting to "cluster worker"
