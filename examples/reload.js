@@ -8,7 +8,7 @@ var cluster = require('../')
 
 // try loading, and changing "Hello", to "Hello World"
 
-var body = 'Hello, world!'
+var body = 'Hello'
   , len = body.length;
 var server = http.createServer(function(req, res){
   res.writeHead(200, { 'Content-Length': len });
