@@ -99,6 +99,25 @@
      Receives an object with state preserved by the `restarting` even,
      patched in the previous master.
 
+### Stand-alone workers
+
+  To run Cluster "stand-alone", aka without an HTTP server you may invoke `.start()` instead of `.listen()` the rest of Cluster remains identical, this is fantastic for processing job queues etc. For example:
+
+      var cluster = require('../');
+
+      var proc = cluster()
+        .set('workers', 4)
+        .use(cluster.debug())
+        .start();
+
+      if (proc.isWorker) {
+        var id = process.env.CLUSTER_WORKER;
+        console.log('  worker #%d started', id);
+        setInterval(function(){
+          console.log('  processing job from worker #%d', id);
+        }, 3000);
+      }
+
 ### Master#state
 
  Current state of the master process, one of:
