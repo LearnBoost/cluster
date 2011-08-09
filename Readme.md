@@ -60,6 +60,10 @@ cluster(app)
   .listen(3000);
 ```
 
+Note that cluster does _not_ create these directories for you, so you may want to:
+
+    $ mkdir {logs,pids}
+
 recommended usage: passing the path to prevent unnecessary database connections in the master process, as `./app` is only `require()`ed within the workers.
 
 ```javascript
