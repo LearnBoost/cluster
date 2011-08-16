@@ -1,4 +1,13 @@
 
+0.7.0 / 2011-08-15 
+==================
+
+  * Fixed stand-alone support with a file path. Closes #141 [reported by SebastianEdwards]
+  * Fixed clobbering of "worker exception" [reported by fredericosilva]
+  * Fixed `logger()` / `pidfiles()` errors when dir does not exist, now using
+  * Removed remaining 2.x support. Closes #108
+mkdirp. Closes #783
+
 0.6.9 / 2011-07-20 
 ==================
 
