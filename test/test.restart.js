@@ -39,25 +39,28 @@ if (cluster.isChild) {
     http.get(options, function(res){
       res.statusCode.should.equal(200);
       var a = getPID('old.worker.0.pid')
-        , b = getPID('old.worker.1.pid'); 
+        , b = getPID('old.worker.1.pid');
       a.should.not.equal(getPID('worker.0.pid'));
       b.should.not.equal(getPID('worker.1.pid'));
       cluster.close();
     });
   });
 } else {
-  cluster.on('listening', function(){
-    movePID('worker.0.pid')
-    movePID('worker.1.pid');
+  var pending = 2;
+  cluster.on('worker pidfile', function(){
+    --pending || (function(){
+      movePID('worker.0.pid')
+      movePID('worker.1.pid');
 
-    // issue some requests
-    var n = 20
-      , pending = n;
-    while (n--) {
-      http.get(options, function(res){
-        res.statusCode.should.equal(200);
-        --pending || cluster.restart();
-      });
-    }
+      // issue some requests
+      var n = 20
+        , pending = n;
+      while (n--) {
+        http.get(options, function(res){
+          res.statusCode.should.equal(200);
+          --pending || cluster.restart();
+        });
+      }
+    })();
   });
 }
