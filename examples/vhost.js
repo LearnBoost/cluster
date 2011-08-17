@@ -4,34 +4,30 @@
  */
 
 var cluster = require('../')
-  , http = require('http')
   , connect = require('connect');
 
-// edit /etc/hosts
-//   127.0.0.1 foo.com
-//   127.0.0.1 bar.com
+// setup:
+//   $ npm install connect
+//   $ edit /etc/hosts
 
-var app = http.createServer(function(req, res){
+var server = connect();
+
+var foo = connect().use(function(req, res){
   var body = 'Hello from foo.com';
   res.writeHead(200, { 'Content-Length': body.length });
   res.end(body);
 });
 
-var app2 = http.createServer(function(req, res){
+var bar = connect().use(function(req, res){
   var body = 'Hello from bar.com';
   res.writeHead(200, { 'Content-Length': body.length });
   res.end(body);
 });
 
-var server = connect.createServer();
-
-server.use(connect.vhost('foo.com', app));
-server.use(connect.vhost('bar.com', app2));
-server.use(function(req, res){
-  res.writeHead(200);
-  res.end('Visit foo.com or bar.com');
-});
+server.use(connect.vhost('foo.com', foo));
+server.use(connect.vhost('bar.com', bar));
 
 cluster(server)
+  .set('workers', 4)
   .use(cluster.debug())
-  .listen(80);
+  .listen(3000);
