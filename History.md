@@ -1,4 +1,10 @@
 
+0.7.1 / 2011-08-18 
+==================
+
+  * Added vhost example. Closes #144
+  * Fixed `cli()` plugin. Closes #145 [reported by alefnula]
+
 0.7.0 / 2011-08-15 
 ==================
 
