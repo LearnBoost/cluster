@@ -72,7 +72,7 @@
    - `workers`  Number of workers to spawn, defaults to the number of CPUs or `1`
    - `working directory`  Working directory defaulting to the script's dir
    - `backlog`  Connection backlog, defaulting to 128
-   - `socket path`  Master socket path defaulting to `./`
+   - `socket port`  Master socket port defaulting to `8989`
    - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
    - `title` master process title defaulting to "cluster"
    - `worker title` worker process title defaulting to "cluster worker"
