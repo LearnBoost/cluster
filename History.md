@@ -1,4 +1,12 @@
 
+0.7.2 / 2011-09-12 
+==================
+
+  * Changed `reload()` to reload workers only
+  * Changed: use preventDefault instead of `exit()` in `cli()`
+  * Fixed "listening" event by deferring "start"
+  * Removed local socket usage as it is being removed from node
+
 0.7.1 / 2011-08-18 
 ==================
 
