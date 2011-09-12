@@ -14,9 +14,19 @@ var server = http.createServer(function(req, res){
   res.end(body);
 });
 
-cluster(server)
+var proc = cluster(server)
   .use(cluster.debug())
-  .use(cluster.logger())
   .use(cluster.stats())
   .use(cluster.repl(__dirname + '/repl'))
   .listen(3000);
+
+if (proc.isChild) {
+  // you can register your own exceptionHandler
+  // which will prevent Cluster from add its own. This
+  // means the workers will be harder to kill, however
+  // if you do not employ additional logic, connections
+  // will remain open until timeout.
+  process.on('uncaughtException', function(err){
+    console.error(err);
+  });
+}
