@@ -20,7 +20,7 @@ var proc = cluster(server)
   .use(cluster.repl(__dirname + '/repl'))
   .listen(3000);
 
-if (proc.isChild) {
+if (proc.isWorker) {
   // you can register your own exceptionHandler
   // which will prevent Cluster from add its own. This
   // means the workers will be harder to kill, however

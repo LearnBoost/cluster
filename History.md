@@ -1,4 +1,9 @@
 
+0.7.3 / 2011-09-12 
+==================
+
+  * Changed: nextTick() uncaughtException handler
+
 0.7.2 / 2011-09-12 
 ==================
 
