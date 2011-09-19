@@ -1,4 +1,10 @@
 
+0.7.4 / 2011-09-19 
+==================
+
+  * Fixed `.listen()` return value. Closes #149 [nibblebot]
+  * Fixed `cli()` hang regression. Closes #148
+
 0.7.3 / 2011-09-12 
 ==================
 
