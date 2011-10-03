@@ -1,4 +1,9 @@
 
+0.7.6 / 2011-10-03 
+==================
+
+  * Fixed standalone read from stdin (__ENOTSOCK__) regression. Closes #153
+
 0.7.5 / 2011-09-23 
 ==================
 
