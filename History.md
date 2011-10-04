@@ -1,4 +1,9 @@
 
+0.7.7 / 2011-10-04 
+==================
+
+  * Fixed `repl()` bug: ensure server exists before closing it
+
 0.7.6 / 2011-10-03 
 ==================
 
