@@ -86,6 +86,7 @@ cluster('./app')
    - [cluster-mail](https://github.com/LearnBoost/cluster-mail) email exception notifications
    - [cluster-exception](https://github.com/3rd-eden/cluster.exception) extensive exception notifications
    - [cluster-responsetimes](https://github.com/mnutt/cluster-responsetimes) response time statistics for cluster's REPL
+   - [cluster-vhost](https://github.com/AndreasMadsen/cluster-vhost) add virtual host support to cluster
 
 ## Screencasts
 
