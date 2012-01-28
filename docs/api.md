@@ -1,4 +1,3 @@
-
 ## API
 
  The Cluster API at its core is extremely simple, all we need to do is pass
@@ -45,7 +44,7 @@
 
 ### Plugins
 
- A plugin simple a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
+ A plugin is simply a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
  
     function myPlugin(path){
       return function(master) {
