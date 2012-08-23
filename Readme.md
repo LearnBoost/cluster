@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/LearnBoost/cluster.png)](http://travis-ci.org/LearnBoost/cluster)
 # Cluster
 
  [Cluster](http://learnboost.github.com/cluster) is an extensible multi-core server manager for [node.js](http://nodejs.org).
