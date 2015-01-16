@@ -24,13 +24,13 @@
     cluster('app')
       .listen(3000);
 
- A good example if this, is a long-lived database connection. Our _app.js_ may have this initialized at the top, which although will work fine stand-alone, may cause cluster's master processes to hang when restarting or closing due to the connection remaining active in the event loop.
+ A good example of this is a long-lived database connection. Our _app.js_ may have this initialized at the top, which will work fine stand-alone, but may cause a cluster's master process to hang when restarting or closing due to the connection remaining active in the event loop.
  
      var db = redis.createClient();
 
 ### Abstract Clusters
 
- Cluster is not bound to servers, cluster can be used to manage processes for processing job queues etc. Below is a minimalist example of this, simply invokes `cluster()` with no object, spawning a worker per cpu:
+ Cluster is not bound to servers; cluster can be used to manage processes for processing job queues, etc. Below is a minimalist example of this, simply invokes `cluster()` with no object, spawning a worker per cpu:
  
       var cluster = require('cluster');
 
