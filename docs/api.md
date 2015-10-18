@@ -8,7 +8,7 @@
      var cluster = require('../')
        , http = require('http');
 
-     var server = http.createServer(function(req, res){
+     var server = http.createServer(function(req, res) {
        res.writeHead(200);
        res.end('Hello World');
      });
@@ -31,7 +31,7 @@
 
 ### Plugins
 
- A plugin simple a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
+ A plugin is simple a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
  
     function myPlugin(path){
       return function(master) {
@@ -59,7 +59,7 @@
    - `working directory`  Working directory defaulting to the script's dir
    - `backlog`  Connection backlog, defaulting to 128
    - `socket path`  Master socket path defaulting to `./`
-   - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60000`
+   - `timeout` Worker shutdown timeout in milliseconds, defaulting to `60,000`
    - `title` master process title defaulting to "cluster master"
    - `worker title` worker process title defaulting to "cluster worker {n}"
    - `user`  User id / name
@@ -113,7 +113,7 @@
       if (proc.isWorker) {
         var id = process.env.CLUSTER_WORKER;
         console.log('  worker #%d started', id);
-        setInterval(function(){
+        setInterval(function() {
           console.log('  processing job from worker #%d', id);
         }, 3000);
       }
