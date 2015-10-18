@@ -31,7 +31,7 @@
 
 ### Plugins
 
- A plugin is simple a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
+ A plugin is simply a function that accepts the `master` process. Most plugin functions _return_ another anonymous function, allowing them to accept options, for example:
  
     function myPlugin(path){
       return function(master) {
