@@ -15,7 +15,7 @@ $ npm install cluster
   - graceful shutdown support
   - resuscitates workers
   - maintains worker count, even if worker was _SIGKILL_ed.
-  - workers commit suicide when master dies 
+  - workers commit suicide when master dies
   - spawns one worker per cpu (by default)
   - extensible via plugins
   - bundled plugins
@@ -81,7 +81,7 @@ cluster('./app')
 ## Plugins
 
  Below are the known 3rd-party plugins for cluster:
- 
+
    - [cluster-log](https://github.com/LearnBoost/cluster-log) remote logger powered by redis
    - [cluster-mail](https://github.com/LearnBoost/cluster-mail) email exception notifications
    - [cluster-exception](https://github.com/3rd-eden/cluster.exception) extensive exception notifications
@@ -114,9 +114,9 @@ Actively tested with node:
 
   * TJ Holowaychuk
 
-## License 
+## License
 
-(The MIT License)
+[The MIT License](LICENSE)
 
 Copyright (c) 2011 LearnBoost &lt;dev@learnboost.com&gt;
 
